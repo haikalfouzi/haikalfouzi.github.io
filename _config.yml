@@ -26,8 +26,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: trndbtd
 github_username:  haikalfouzi
 
+remote_theme: poole/hyde
 # Build settings
-theme: hyde
+# theme: hyde
 plugins:
   - jekyll-feed
 paginate: 5

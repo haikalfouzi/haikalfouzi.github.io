@@ -17,25 +17,26 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 # Setup
-title: 'Haikal Fouzi'
-tagline: ''
-description: 'Haikal Fouzi's research'
-url: ''
-baseurl: /
+# Setup
+title:            Haikal
+tagline:
+description:      "Haikal Fouzi's research"
+url:
+baseurl:          /
 
 author:
-  name: 'Haikal Fouzi'
-  url: https://twitter.com/trndbtd
+  name:           'Haikal Fouzi'
+  url:            https://twitter.com/trndbtd
 
-paginate: 5
+paginate:         5
 
 # Custom vars
-version: 2.1.0
+version:          2.1.0
 
 github:
-  repo: https://github.com/haikalfouzi
+  repo:           https://github.com/haikalfouzi
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

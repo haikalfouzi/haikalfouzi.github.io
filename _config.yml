@@ -20,9 +20,9 @@
 
 # Setup
 title: 'Haikal Fouzi'
-tagline:
+tagline: ''
 description: 'Haikal Fouzi's research'
-url:
+url: ''
 baseurl: /
 
 author:
@@ -34,7 +34,8 @@ paginate: 5
 # Custom vars
 version: 2.1.0
 
-
+github:
+  repo: https://github.com/haikalfouzi
 
 # Exclude from processing.
 # The following items will not be processed, by default.

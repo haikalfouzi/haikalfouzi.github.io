@@ -4,14 +4,14 @@
 title:            Haikal Fouzi
 tagline:
 description:      "Haikal Fouzi's research"
-url: http://haikalfouzi.com
-baseurl:          /
+url:              http://haikalfouzi.com
+baseurl:          
 
 author:
   name:           'Haikal Fouzi'
   url:            https://twitter.com/haikalfouzi
 
-paginate:         5
+paginate:         3
 
 # Custom vars
 version:          2.1.0

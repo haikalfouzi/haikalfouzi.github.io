@@ -4,13 +4,22 @@
  <title>Haikal Fouzi</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-06-18T21:31:31+08:00</updated>
+ <updated>2020-06-18T21:41:27+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Haikal Fouzi</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Test</title>
+   <link href="http://localhost:4000/2020/06/18/test.html"/>
+   <updated>2020-06-18T00:00:00+08:00</updated>
+   <id>http://localhost:4000/2020/06/18/test</id>
+   <content type="html">&lt;p&gt;testing&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Hyde</title>

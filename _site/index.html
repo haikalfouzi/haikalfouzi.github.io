@@ -72,8 +72,6 @@
         
       
         
-          
-        
       
       <span class="sidebar-nav-item">Currently v2.1.0</span>
     </nav>
@@ -88,213 +86,114 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2020/06/18/test.html">
-        Test
+      <a href="/2018/06/18/Rocker-Bogie-Robot.html">
+        Rocker Bogie Robot — Building an autonomous search and rescue robot
       </a>
     </h1>
 
-    <span class="post-date">18 Jun 2020</span>
+    <span class="post-date">18 Jun 2018</span>
 
-    <p>testing</p>
+    <h1 id="abstract">Abstract</h1>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2013/12/28/introducing-hyde.html">
-        Introducing Hyde
-      </a>
-    </h1>
+<p>Collapse buildings and fires are a common risk faced by first responders in the world, and there are constant attempts to improve the safety and efficiency in search and rescue operations. This project aims to research and build an autonomous search and rescue vehicle capable of operating semi-autonomously in a one-story building under normal climatic conditions, assuming there is no fire as well. This system must also be able to be controlled manually if necessary. The search and rescue system must also be able to accurately identify people and animals, and relay its findings to its operators. To meet all the requirements detailed in this report, an unmanned ground vehicle (UGV) modeled as a rocker-bogie was designed. Using a combination of ultrasonic, infrared camera, regular camera and a LIDAR sensor, semi-autonomy would be achievable. The UGV will use a combination of a 2D map created with the LIDAR sensor, and odometry using wheel encoders to relay locations of victims to its operators. The infrared camera and regular camera would be used. The proposed design was made to be as inexpensive, versatile, and reliable as possible. The design chosen would be based of the rocker-bogie ground vehicle design and modified to meet the requirements of the challenge. This report details the design, project timeline, and management, work completed, and the proposed work to be completed.</p>
 
-    <span class="post-date">28 Dec 2013</span>
+<h1 id="design-description">Design Description</h1>
+<h2 id="concept">Concept</h2>
 
-    <p>Hyde is a brazen two-column <a href="http://jekyllrb.com">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
+<p>Before settling on the unmanned rocker bogie, the team brainstormed on multiple ideas to meet the requirements detailed in 3.1 of Senior Design Search and Rescue guidelines and requirements. These were generally ground based and aerial solutions for the search and rescue system. The three main concepts were a ground based tank like vehicle, a combination of a drone and a ground vehicle, a drone, and the rocker bogie concept. The systems using drones would use beacon based low-energy bluetooth local tracking systems to search the space, while the ground based vehicles utilized the LIDAR system to search. After consulting with the project advisor, the hybrid system (drone and ground vehicle) and drone system were dropped as they added a substantial degree of complexity, without a significant improvement in functionality in comparison to the ground based robots. Hence the ground based systems were chosen to be the likely solutions for the project. With further research the rocker bogie was chosen for its lightweight and versatile suspension system as compared to the tank like ground vehicle.</p>
 
-<h3 id="built-on-poole">Built on Poole</h3>
+<h2 id="concept-evaluation">Concept Evaluation</h2>
 
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Hyde here) includes the following:</p>
+<p>To evaluate the options for the project, a decision matrix using points was used. The decision matrix compares a rocker bogie design, a drone using a beacon based local positioning system (LPS) and a combination of ground and air based systems to reach a decision on the optimal strategy for the project. As seen in the decision matrix titled “Decision Matrix” in the appendix, the best solution is the ground based rocker bogie, which beat out a combination of the rocker bogie and a drone, because of costs, and the unmanned aerial vehicle due to the added complexity of unmanned flight and maneuverability.</p>
 
-<ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code class="language-plaintext highlighter-rouge">rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
+<h3 id="sensor-system-comparison">Sensor System Comparison</h3>
 
-<h3 id="hyde-features">Hyde features</h3>
+<p>Decision matrix for sensors and CPU comparison.</p>
 
-<p>In addition to the features of Poole, Hyde adds the following:</p>
+<script src="https://gist.github.com/1d0010c2a00ed426cb01b6cca42c3c25.js"> </script>
 
-<ul>
-  <li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-  <li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> classes</li>
-  <li><a href="https://github.com/poole/hyde#themes">Eight optional color schemes</a>, available via <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> classes</li>
-</ul>
+<h2 id="detail-design">Detail Design</h2>
+<h3 id="chassis">Chassis</h3>
 
-<p><a href="https://github.com/poole/hyde#readme">Head to the readme</a> to learn more.</p>
+<p><center><img src="/image//rocker-bogie-robot/image6.png" alt="Isometric view of Rocker Bogie Robot" />
+<span class="caption">Isometric view of Rocker Bogie Robot</span>
+</center></p>
 
-<h3 id="browser-support">Browser support</h3>
+<p>The chassis of this robot will use the rocker-bogie system as its structural build. The rocker-bogie suspension has become a proven mobility application known for its superior vehicle stability and obstacle-climbing capability. This mechanism allows climbing over high obstacles while keeping all six wheels in contact with the ground. In a rocker-bogie system, the left and right sides of the robot move independently. This allows the robot to transverse on uneven terrains which are possible in a collapsed building setting. The dimensions of this robot is designed to overcome the 1 feet obstacle that will be present in the obstacle.
+For the Winter term, the chassis was constructed using PVC Schedule 80 pipe materials. Mainly this material is used for pressure applications and has a thicker wall than schedule 40 pipes. This material is highly durable and easy to install compared to PVC and ABS Foam Core pipes. The weight of this material is 0.41 lb/ft. By calculating the total weight of all the structural parts of the robot, the estimated weight of this chassis is 4.305 lb. For the front chassis, it has two PVC pipes of length 10 inches each angled at 90 degrees. This length will provide a clearance of 14 inches for the front legs to go pass the obstacle.</p>
 
-<p>Hyde is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
+<p>As the team progress to the Spring term, flaws were present in using pipes as the chassis. The chassis fails to maintain structural symmetry as usage progresses. Taking comments from the faculty by the end of the winter term, the structure of the rocker bogie appears to be wobbly and not symmetrical. The rocker bogie is then constructed using C-Channel steels. Low cost is still maintained as steel is the most common and least expensive metal. The C-Channels are consumer off the shelf parts bought from VEX Robotics. The material is light and sturdy and has holes pre-drilled every 0.5” which allows for easy construction of the body and its components. The wheels have a diameter of 4” which is 3D-printed.</p>
 
-<h3 id="download">Download</h3>
+<p><center><img src="/image//rocker-bogie-robot/image26.png" alt="Side view of Rocker Bogie Robot" />
+<span class="caption">Side view of Rocker Bogie Robot</span>
+</center></p>
 
-<p>Hyde is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/hyde">GitHub repository</a> for downloads, bug reports, and features requests.</p>
+<p><center><img src="/image//rocker-bogie-robot/image23.png" alt="Front view of Rocker Bogie Robot" />
+<span class="caption">Front view of Rocker Bogie Robot</span>
+</center></p>
 
-<p>Thanks!</p>
+<p><center><img src="/image//rocker-bogie-robot/image14.jpg" alt="Final assembly" />
+<span class="caption">Final assembly</span>
+</center></p>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2012/02/07/example-content.html">
-        Example content
-      </a>
-    </h1>
+<p><center><img src="/image//rocker-bogie-robot/image24.jpg" alt="Final assembly - side view" />
+<span class="caption">Final assembly - side view</span>
+</center></p>
 
-    <span class="post-date">07 Feb 2012</span>
+<h3 id="motor">Motor</h3>
 
-    <div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
+<p>The 6 legs of the rocker-bogie each have a 12V DC 30RPM Mini Gearbox Electric Motor. Each motor will produce a torque of roughly 0.88 ft-lb which should be more than capable of powering the 0.3 lbs, 4.92 in wide off-road tires connected to it. Considering that the motor has a stall torque of 1 ft-lb and 500mA this should be more than enough to guarantee smooth transportation of our vehicle and any added load. The effectiveness of the rocker-bogie comes from the design of the differential and as such each leg must be capable of moving independently, swiftly and powerfully. As a result the lightweight nature of the motor is very important and at 0.3625 lbs per motor our robot will not be burdened by the presence of 6 motors. In order to successfully hurdle obstacles, the two front and rear wheels will specifically have individual steering dc servomotors. In addition to hurdling obstacles, this will also grant the rocker-bogie the ability to swerve, curve and arch around obstacles. These obstacles will differ in sizes and so the shaft size of 6mm, couple with a relatively small diameter of 37 mm would mean that the motor would not interfere with the robots suspension system or risk coming into contact with an obstacle whilst hurdling objects.</p>
 
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+<h3 id="autonomous-system-control">Autonomous System Control</h3>
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
+<p><center><img src="/image//rocker-bogie-robot/image1.png" alt="" />
+<span class="caption"></span>
+</center></p>
 
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+<p><center><img src="/image//rocker-bogie-robot/image4.jpg" alt="" />
+<span class="caption"></span>
+</center></p>
 
-<h2 id="inline-html-elements">Inline HTML elements</h2>
+<p><center><img src="/image//rocker-bogie-robot/image20.jpg" alt="Sensor placement and assembly" />
+<span class="caption">Sensor placement and assembly</span>
+</center></p>
 
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+<p>The robot was designed to run autonomously for two separate modes, the obstacle avoidance mode and the lifesign search mode. This will allow the rocker-bogie search and rescue robot to carry out mission task without the need for supervision. The operator of the robot will have the ability to activate the autonomous mode through remote connection available in the Raspberry Pi 3. In the autonomous mode, the robot will use a combination of 3 ultrasonic sensors, and LIDAR sensor to navigate the space and avoid obstacles. All the 3 ultrasonic sensors are mounted at the front of the robot where one sensor is in the center, and the remaining of sensors are mounted near the center ultrasonic sensor with 45° orientation. The advantages of the ultrasonic sensors setup are the ability to detect obstacle at wider range of view for the robot, and the data from each sensors can be used to calculate angle needed for the robot to avoid an obstacle. For example, when the robot is within 8 inches in front of an obstacle, the robot will stop and begin the process to avoid the obstacle. The data from each ultrasonic sensors will be used to compare and decide the movement direction of the robot. If the left ultrasonic sensor shows greater reading of the distance than the center and right ultrasonic sensors, the robot will move 45° to the left, and vice versa. The LIDAR sensor will allow the operator to see the 360° view of environment in real time as the robot navigate through the site.</p>
 
-<ul>
-  <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Mark otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-</ul>
+<p>The lifesign search mode will utilize 1 thermal camera that is mounted in the same location as the front ultrasonic sensor. The thermal camera that is going to be used in this robot able to measure temperatures ranging from 0℃ to 80℃ (32℉ to 176℉). The capability of the thermal camera to measure such a huge range in temperature allows the robot to differentiate the source of heat from human body and the environment. The Raspberry Pi 3 used in this robot will produce a real time infrared video (8x8 pixels) in the remote desktop that will assists the operator to locate the victim. Since the thermal camera is in the same view as the front ultrasonic sensor, the robot will keep moving forward until the thermal camera read temperature near to the human body temperature in its field of view (37℃ or 98.6℉). Once the thermal camera have a human body temperature reading, the robot will align itself towards the source of heat to find the victim.</p>
 
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+<h3 id="manual-system-control">Manual System Control</h3>
 
-<h2 id="heading">Heading</h2>
+<p>For the manual system control, a standard camera will also be mounted at the center along with the thermal camera and the front ultrasonic sensor. Type of camera that is going to be used is the Raspberry Pi Camera Module with a wide angle lens for better field of view. The operator of the robot will control the robot through wifi connection from a remote computer. A standard directional pad on the keyboard and GUI buttons will be used to control the robot’s movement. The operator will have the camera view, infrared video feed, simultaneous localization and mapping (SLAM) and sound output from microphone attached to the Raspberry Pi 3 to help locate the victims manually.</p>
 
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+<h3 id="environment-mapping-system">Environment Mapping System</h3>
 
-<h3 id="code">Code</h3>
+<p>LIDAR sensor also serves another purpose in the rocker-bogie search and rescue system; which is to generate the map of the environment during the search and rescue process. To execute this idea, the team is going to utilize technique called simultaneous localization and mapping (SLAM). The LIDAR sensor used for the construction of the rocker-bogie robot system is salvaged from an old robotic vacuum; a Neato XV-11. The sensor is capable of recording 360° distance with interval of 4° for each measurement. The live data from the LIDAR sensor is then converted into a map with the help from an open source package for SLAM developed by Prof. Simon D. Levy from Washington &amp; Lee University. Due to incompatibility of Robot Operating System (ROS) with the Raspbian Stretch OS on the Raspberry Pi 3, all programming for the environment mapping system has to be written in Python. The basis of SLAM process is by using laser scan to extract the current position of the robot at certain time. Whenever the robot moves, the odometry changes and the comparison between the previous laser scan data and the new one will determine the position and orientation of the robot in the workspace.</p>
 
-<p>Cum sociis natoque penatibus et magnis dis <code class="language-plaintext highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
+<p><center><img src="/image//rocker-bogie-robot/image27.png" alt="SLAM using onboard LIDAR sensor" />
+<span class="caption">SLAM using onboard LIDAR sensor</span>
+</center></p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
-</span>
+<h3 id="operators-user-interface-oui">Operator’s User Interface (OUI)</h3>
 
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">return a + b</span><span class="dl">"</span><span class="p">);</span>
+<p><center><img src="/image//rocker-bogie-robot/image21.png" alt="" />
+<span class="caption"></span>
+</center></p>
 
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></code></pre></figure>
+<p>The user interface for the operator was designed entirely using Python to allow ease of use and to provide enough information for the operator to carry out search and rescue activity. The robot can be started easily by turning on the switch on the power source of the robot, then the operating system will boot up normally and all the necessary information will show up automatically on the operator’s device.</p>
 
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+<p><center><img src="/image//rocker-bogie-robot/image31.png" alt="Available commands for the robot" />
+<span class="caption">Available commands for the robot</span>
+</center></p>
 
-<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
+<p>The operator can easily switch between manual mode and autonomous mode using the OUI buttons. When the manual mode is activated, the robot can be controlled using keyboard by using “W,A,S,D” buttons to maneuver the robot or it can be controlled using the onscreen button. The SLAM, camera, and thermal view will be updated automatically at rate 1 ms to avoid cpu thermal throttle on the Raspberry Pi 3. Autonomous mode will utilize the ultrasonic sensors and the thermal sensor to execute the Obstacle Avoidance System and the Lifesign Search Mode. When the robot is in the autonomous mode, the operator can check for the status of the robot on the terminal display. The robot is equipped with 2 kill switches that will stop the robot activity and ensure the safety of the robot during the operation. 1 kill switch is located on the power source of the robot, and 1 remote kill switch is in the Operator’s User Interface (OUI).</p>
 
-<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
+<h3 id="budget">Budget</h3>
 
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
+<p>For the project funding was provided by the Drexel Mechanical Engineering and Mechanics Department. The budget used so far for the project is only 29% from the total of $2500 given. The amount used were for purchasing the structural parts , programmable parts and the parts pertaining to the motoring system. An estimate of the total cost of the project would be around a $1,000 at most. This projection is based on the fact that almost $2,000 was still available as of week 8. With week 8 being scheduled to be a period of assembly on our timeline. This meant that barring any unforeseen issues that may occur during testing all required parts had been purchased and delivered. Any more costs that may occur during the spring quarter would certainly be in the form of testing or perhaps replacement of a power source or some other easily replaceable component of our robot. The spending to date is summarized in the table “Project Budget” below.</p>
 
-<h3 id="lists">Lists</h3>
+<script src="https://gist.github.com/c69e218f1badba9109b7969e3c21b923.js"> </script>
 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-
-<ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
-
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
-
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
-
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<h3 id="images">Images</h3>
-
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
-
-<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image" />
-<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image" />
-<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<hr />
-
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
 
   </div>
   
@@ -302,7 +201,7 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page2">Older</a>
+    <span class="pagination-item older">Older</span>
   
   
     <span class="pagination-item newer">Newer</span>

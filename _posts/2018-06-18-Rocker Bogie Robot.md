@@ -22,6 +22,8 @@ Decision matrix for sensors and CPU comparison.
 
 {% gist 1d0010c2a00ed426cb01b6cca42c3c25 %}
 
+{% include image.html file="/rocker-bogie-robot/iamge19.png" description="Sensors connection map" %}
+
 ## Detail Design
 ### Chassis
 
@@ -52,7 +54,11 @@ The 6 legs of the rocker-bogie each have a 12V DC 30RPM Mini Gearbox Electric Mo
 
 The robot was designed to run autonomously for two separate modes, the obstacle avoidance mode and the lifesign search mode. This will allow the rocker-bogie search and rescue robot to carry out mission task without the need for supervision. The operator of the robot will have the ability to activate the autonomous mode through remote connection available in the Raspberry Pi 3. In the autonomous mode, the robot will use a combination of 3 ultrasonic sensors, and LIDAR sensor to navigate the space and avoid obstacles. All the 3 ultrasonic sensors are mounted at the front of the robot where one sensor is in the center, and the remaining of sensors are mounted near the center ultrasonic sensor with 45° orientation. The advantages of the ultrasonic sensors setup are the ability to detect obstacle at wider range of view for the robot, and the data from each sensors can be used to calculate angle needed for the robot to avoid an obstacle. For example, when the robot is within 8 inches in front of an obstacle, the robot will stop and begin the process to avoid the obstacle. The data from each ultrasonic sensors will be used to compare and decide the movement direction of the robot. If the left ultrasonic sensor shows greater reading of the distance than the center and right ultrasonic sensors, the robot will move 45° to the left, and vice versa. The LIDAR sensor will allow the operator to see the 360° view of environment in real time as the robot navigate through the site.
 
+{% include image.html file="/rocker-bogie-robot/image33.png" description="Basic obstacle avoidance logic" %}
+
 The lifesign search mode will utilize 1 thermal camera that is mounted in the same location as the front ultrasonic sensor. The thermal camera that is going to be used in this robot able to measure temperatures ranging from 0℃ to 80℃ (32℉ to 176℉). The capability of the thermal camera to measure such a huge range in temperature allows the robot to differentiate the source of heat from human body and the environment. The Raspberry Pi 3 used in this robot will produce a real time infrared video (8x8 pixels) in the remote desktop that will assists the operator to locate the victim. Since the thermal camera is in the same view as the front ultrasonic sensor, the robot will keep moving forward until the thermal camera read temperature near to the human body temperature in its field of view (37℃ or 98.6℉). Once the thermal camera have a human body temperature reading, the robot will align itself towards the source of heat to find the victim.
+
+{% include image.html file="/rocker-bogie-robot/image32.png" description="Lifesign search mode" %}
 
 ### Manual System Control
 

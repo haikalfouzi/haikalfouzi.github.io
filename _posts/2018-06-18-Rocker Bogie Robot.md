@@ -22,7 +22,7 @@ Decision matrix for sensors and CPU comparison.
 
 {% gist 1d0010c2a00ed426cb01b6cca42c3c25 %}
 
-{% include image.html file="/rocker-bogie-robot/iamge19.png" description="Sensors connection map" %}
+{% include image.html file="/rocker-bogie-robot/image19.png" description="Sensors connection map" %}
 
 ## Detail Design
 ### Chassis

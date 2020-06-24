@@ -4,7 +4,7 @@
  <title>Haikal Fouzi</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-06-24T16:51:22+08:00</updated>
+ <updated>2020-06-24T17:36:59+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Haikal Fouzi</name>
@@ -98,8 +98,8 @@ For the Winter term, the chassis was constructed using PVC Schedule 80 pipe mate
 &lt;span class=&quot;caption&quot;&gt;Lifesign search mode&lt;/span&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;div class=&quot;embed-container&quot;&gt;
-  &lt;center&gt;&lt;iframe width=&quot;700&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/1SlIWpW8VuSIP9MXJwbhFVyIh5vyt7G90/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+&lt;div class=&quot;iframe&quot;&gt;
+  &lt;center&gt;&lt;iframe src=&quot;https://drive.google.com/file/d/1SlIWpW8VuSIP9MXJwbhFVyIh5vyt7G90/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; class=&quot;video&quot;&gt;
   &lt;/iframe&gt;&lt;/center&gt;
 &lt;/div&gt;
 
@@ -115,8 +115,13 @@ For the Winter term, the chassis was constructed using PVC Schedule 80 pipe mate
 &lt;span class=&quot;caption&quot;&gt;SLAM using onboard LIDAR sensor&lt;/span&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;div class=&quot;embed-container&quot;&gt;
-  &lt;center&gt;&lt;iframe width=&quot;700&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+&lt;div class=&quot;iframe&quot;&gt;
+  &lt;center&gt;&lt;iframe src=&quot;https://drive.google.com/file/d/1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; class=&quot;video&quot;&gt;
+  &lt;/iframe&gt;&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;iframe&quot;&gt;
+  &lt;center&gt;&lt;iframe class=&quot;video&quot; src=&quot;https://www.youtube.com/embed/ZLyDvABxGF0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
   &lt;/iframe&gt;&lt;/center&gt;
 &lt;/div&gt;
 

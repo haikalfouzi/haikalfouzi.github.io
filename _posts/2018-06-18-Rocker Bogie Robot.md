@@ -74,7 +74,6 @@ LIDAR sensor also serves another purpose in the rocker-bogie search and rescue s
 
 {% include googledrive.html id="1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa" %}
 
-{% include youtube.html id="ZLyDvABxGF0" %}
 ### Operator's User Interface (OUI)
 
 {% include image.html file="/rocker-bogie-robot/image21.png" %}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-23T14:16:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Haikal Fouzi</title><subtitle>Haikal Fouzi's research</subtitle><author><name>Haikal Fouzi</name></author><entry><title type="html">Rocker Bogie Robot — Building an autonomous search and rescue robot</title><link href="http://localhost:4000/2018/06/18/Rocker-Bogie-Robot.html" rel="alternate" type="text/html" title="Rocker Bogie Robot — Building an autonomous search and rescue robot" /><published>2018-06-18T00:00:00+08:00</published><updated>2018-06-18T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/18/Rocker%20Bogie%20Robot</id><content type="html" xml:base="http://localhost:4000/2018/06/18/Rocker-Bogie-Robot.html">&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-24T16:51:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Haikal Fouzi</title><subtitle>Haikal Fouzi's research</subtitle><author><name>Haikal Fouzi</name></author><entry><title type="html">Rocker Bogie Robot — Building an autonomous search and rescue robot</title><link href="http://localhost:4000/2018/06/18/Rocker-Bogie-Robot.html" rel="alternate" type="text/html" title="Rocker Bogie Robot — Building an autonomous search and rescue robot" /><published>2018-06-18T00:00:00+08:00</published><updated>2018-06-18T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/18/Rocker%20Bogie%20Robot</id><content type="html" xml:base="http://localhost:4000/2018/06/18/Rocker-Bogie-Robot.html">&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
 
 &lt;p&gt;Collapse buildings and fires are a common risk faced by first responders in the world, and there are constant attempts to improve the safety and efficiency in search and rescue operations. This project aims to research and build an autonomous search and rescue vehicle capable of operating semi-autonomously in a one-story building under normal climatic conditions, assuming there is no fire as well. This system must also be able to be controlled manually if necessary. The search and rescue system must also be able to accurately identify people and animals, and relay its findings to its operators. To meet all the requirements detailed in this report, an unmanned ground vehicle (UGV) modeled as a rocker-bogie was designed. Using a combination of ultrasonic, infrared camera, regular camera and a LIDAR sensor, semi-autonomy would be achievable. The UGV will use a combination of a 2D map created with the LIDAR sensor, and odometry using wheel encoders to relay locations of victims to its operators. The infrared camera and regular camera would be used. The proposed design was made to be as inexpensive, versatile, and reliable as possible. The design chosen would be based of the rocker-bogie ground vehicle design and modified to meet the requirements of the challenge. This report details the design, project timeline, and management, work completed, and the proposed work to be completed.&lt;/p&gt;
 
@@ -79,6 +79,11 @@ For the Winter term, the chassis was constructed using PVC Schedule 80 pipe mate
 &lt;span class=&quot;caption&quot;&gt;Lifesign search mode&lt;/span&gt;
 &lt;/center&gt;&lt;/p&gt;
 
+&lt;div class=&quot;embed-container&quot;&gt;
+  &lt;center&gt;&lt;iframe width=&quot;700&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/1SlIWpW8VuSIP9MXJwbhFVyIh5vyt7G90/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;&lt;/center&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&quot;manual-system-control&quot;&gt;Manual System Control&lt;/h3&gt;
 
 &lt;p&gt;For the manual system control, a standard camera will also be mounted at the center along with the thermal camera and the front ultrasonic sensor. Type of camera that is going to be used is the Raspberry Pi Camera Module with a wide angle lens for better field of view. The operator of the robot will control the robot through wifi connection from a remote computer. A standard directional pad on the keyboard and GUI buttons will be used to control the robot’s movement. The operator will have the camera view, infrared video feed, simultaneous localization and mapping (SLAM) and sound output from microphone attached to the Raspberry Pi 3 to help locate the victims manually.&lt;/p&gt;
@@ -90,6 +95,11 @@ For the Winter term, the chassis was constructed using PVC Schedule 80 pipe mate
 &lt;p&gt;&lt;center&gt;&lt;img src=&quot;/image//rocker-bogie-robot/image27.png&quot; alt=&quot;SLAM using onboard LIDAR sensor&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;SLAM using onboard LIDAR sensor&lt;/span&gt;
 &lt;/center&gt;&lt;/p&gt;
+
+&lt;div class=&quot;embed-container&quot;&gt;
+  &lt;center&gt;&lt;iframe width=&quot;700&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;&lt;/center&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;operators-user-interface-oui&quot;&gt;Operator’s User Interface (OUI)&lt;/h3&gt;
 

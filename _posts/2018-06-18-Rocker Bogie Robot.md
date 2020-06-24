@@ -60,6 +60,8 @@ The lifesign search mode will utilize 1 thermal camera that is mounted in the sa
 
 {% include image.html file="/rocker-bogie-robot/image32.png" description="Lifesign search mode" %}
 
+{% include googleDrivePlayer.html id="1SlIWpW8VuSIP9MXJwbhFVyIh5vyt7G90/view" %}
+
 ### Manual System Control
 
 For the manual system control, a standard camera will also be mounted at the center along with the thermal camera and the front ultrasonic sensor. Type of camera that is going to be used is the Raspberry Pi Camera Module with a wide angle lens for better field of view. The operator of the robot will control the robot through wifi connection from a remote computer. A standard directional pad on the keyboard and GUI buttons will be used to control the robot’s movement. The operator will have the camera view, infrared video feed, simultaneous localization and mapping (SLAM) and sound output from microphone attached to the Raspberry Pi 3 to help locate the victims manually.
@@ -69,6 +71,8 @@ For the manual system control, a standard camera will also be mounted at the cen
 LIDAR sensor also serves another purpose in the rocker-bogie search and rescue system; which is to generate the map of the environment during the search and rescue process. To execute this idea, the team is going to utilize technique called simultaneous localization and mapping (SLAM). The LIDAR sensor used for the construction of the rocker-bogie robot system is salvaged from an old robotic vacuum; a Neato XV-11. The sensor is capable of recording 360° distance with interval of 4° for each measurement. The live data from the LIDAR sensor is then converted into a map with the help from an open source package for SLAM developed by Prof. Simon D. Levy from Washington & Lee University. Due to incompatibility of Robot Operating System (ROS) with the Raspbian Stretch OS on the Raspberry Pi 3, all programming for the environment mapping system has to be written in Python. The basis of SLAM process is by using laser scan to extract the current position of the robot at certain time. Whenever the robot moves, the odometry changes and the comparison between the previous laser scan data and the new one will determine the position and orientation of the robot in the workspace.
 
 {% include image.html file="/rocker-bogie-robot/image27.png" description="SLAM using onboard LIDAR sensor" %}
+
+{% include googleDrivePlayer.html id="1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa/view" }
 
 ### Operator's User Interface (OUI)
 

@@ -60,7 +60,7 @@ The lifesign search mode will utilize 1 thermal camera that is mounted in the sa
 
 {% include image.html file="/rocker-bogie-robot/image32.png" description="Lifesign search mode" %}
 
-{% include googledrive.html id="1SlIWpW8VuSIP9MXJwbhFVyIh5vyt7G90" %}
+{% include youtube.html id="qTE23JQNEgY" %}
 
 ### Manual System Control
 
@@ -72,7 +72,7 @@ LIDAR sensor also serves another purpose in the rocker-bogie search and rescue s
 
 {% include image.html file="/rocker-bogie-robot/image27.png" description="SLAM using onboard LIDAR sensor" %}
 
-{% include googledrive.html id="1rVFCUEuKEMNv9eLDZvThigh8zv-lPlLa" %}
+{% include youtube.html id="dGK0_Ku4cWg" %}
 
 ### Operator's User Interface (OUI)
 

@@ -60,7 +60,7 @@ Skewness metrics
 Orthogonal quality
 
 | Metrics | Value |
-| ------------- | --------- |
+| ------------- | ---------- |
 | Inappropriate | 0-0.001    |
 | Bad           | 0.001-0.15 |
 | Sufficient    | 0.15-0.20  |

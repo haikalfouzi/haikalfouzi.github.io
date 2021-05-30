@@ -11,7 +11,7 @@ author:
   name:           'Haikal Fouzi'
   url:            https://twitter.com/haikalfouzi
 
-paginate:         3
+paginate:         100
 
 # Custom vars
 version:          2.1.0

@@ -59,14 +59,14 @@ Skewness quality metrics
 
 Orthogonal quality metrics
 
-| Metrics | Value |
-| ------------- | ---------- |
-| Inappropriate | 0-0.001    |
-| Bad           | 0.001-0.15 |
-| Sufficient    | 0.15-0.20  |
-| Good          | 0.20-0.70  |
-| Very Good     | 0.70-0.95  |
-| Outstanding   | 0.95-1.00  |
+Metrics | Value
+------- | -------
+Inappropriate | 0-0.001
+Bad | 0.001-0.15
+Sufficient | 0.15-0.20
+Good | 0.20-0.70
+Very Good | 0.70-0.95
+Outstanding | 0.95-1.00	
 
 ## Computational Fluid Dynamics Result
 

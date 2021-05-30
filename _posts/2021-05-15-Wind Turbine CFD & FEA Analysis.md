@@ -42,7 +42,7 @@ Side Boundaries | Periodic
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD.PNG" description="Fluid Domain Mesh" %}
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD statistic.PNG" description="Fluid Domain Mesh Statistic" %}
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD metric.PNG" description="Fluid Domain Mesh Orthogonality Metric" %}
-{% include image.html file="/wind-blade-turbine/fluid domain mesh CFD metric skewness.PNG" description="Fluid Domain Mesh Skewness Metric" %}
+{% include image.html file="/wind-blade-turbine/skewness.PNG" description="Fluid Domain Mesh Skewness Metric" %}
 
 From the fluid domain mesh metrics, we have around 370,494 elements. So the total number of unknowns and the algebraic equations ANSYS Fluent needs to solve is around 2.22 million (u, v, w, p, k, 𝜔 - 6 unknowns from governing equations). The skewness and orthogonality quality of the mesh are also in acceptable range.
 

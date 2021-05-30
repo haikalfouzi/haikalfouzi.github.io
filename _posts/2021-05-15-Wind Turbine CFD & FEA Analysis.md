@@ -46,7 +46,7 @@ Side Boundaries | Periodic
 
 From the fluid domain mesh metrics, we have around 370,494 elements. So the total number of unknowns and the algebraic equations ANSYS Fluent needs to solve is around 2.22 million (u, v, w, p, k, 𝜔 - 6 unknowns from governing equations). The skewness and orthogonality quality of the mesh are also in acceptable range.
 
-Skewness metrics
+Skewness quality metrics
 
 | Metrics | Value |
 | ------------- | --------- |
@@ -57,7 +57,7 @@ Skewness metrics
 | Bad           | 0.95-0.98 |
 | Inappropriate | 0.98-1.00 |  
 
-Orthogonal quality
+Orthogonal quality metrics
 
 | Metrics | Value |
 | ------------- | ---------- |
@@ -67,6 +67,7 @@ Orthogonal quality
 | Good          | 0.20-0.70  |
 | Very Good     | 0.70-0.95  |
 | Outstanding   | 0.95-1.00  |
+
 ## Computational Fluid Dynamics Result
 
  Mass Flow Rate               | (kg/s)

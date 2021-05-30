@@ -11,7 +11,7 @@ This analysis covered the deformation due to aerodynamic loading of a wind turbi
 
 ## Wind Turbine Blade Profile
 
-Thte blade is 43.2 meters long and starts with a cylindrical shape at the root and then transitions to the airfoils S818, S825, and S826 for the root, body, and tip.
+The blade is 43.2 meters long and starts with a cylindrical shape at the root and then transitions to the airfoils S818, S825, and S826 for the root, body, and tip.
 
 {% include image.html file="/wind-blade-turbine/Imported_pressure_2.PNG" description="Wind Turbine - Root View" %}
 {% include image.html file="/wind-blade-turbine/blade render.png" description="Wind Turbine - ISO View" %}
@@ -27,7 +27,7 @@ Operating conditions is using air at standard conditions:
 
 Operating Conditions | Value
 ---------------------|-------
-Air Temperature | 15 - ℃
+Air Temperature | 15 ℃
 Air Density | 1.225 kg/m^3
 Viscosity | 1.7894e-05 kg/(ms)
 
@@ -42,19 +42,19 @@ Side Boundaries | Periodic
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD.PNG" description="Fluid Domain Mesh" %}
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD statistic.PNG" description="Fluid Domain Mesh Statistic" %}
 {% include image.html file="/wind-blade-turbine/fluid domain mesh CFD metric.PNG" description="Fluid Domain Mesh Orthogonality Metric" %}
-{% include image.html file="image/wind-blade-turbine/fluid domain mesh CFD metric skewness.PNG" %}
+{% include image.html file="/wind-blade-turbine/fluid domain mesh CFD metric skewness.PNG" description="Fluid Domain Mesh Skewness Metric" %}
 
 From the fluid domain mesh metrics, we have around 370,494 elements. So the total number of unknowns and the algebraic equations ANSYS Fluent needs to solve is around 2.22 million (u, v, w, p, k, 𝜔 - 6 unknowns from governing equations). The skewness and orthogonality quality of the mesh are also in acceptable range.
 
 Skewness metrics:
-Outstanding	| Very Good	| Good | Sufficient | Bad | Inappropriate
-------------|-----------|------|------------|-----|---------------
-0-0.25 | 0.25-0.50 | 0.50-0.8 | 0.80-0.95 | 0.95-0.98 | 0.98-1.00
+| Outstanding | Very Good | Good      | Sufficient | Bad       | Inappropriate |
+| ----------- | --------- | --------- | ---------- | --------- | ------------- |
+| 0-0.25      | 0.25-0.50 | 0.50-0.80 | 0.80-0.95  | 0.95-0.98 | 0.98-1.00     |
 
 Orthogonal quality:
-Inappropriate | Bad | Sufficient | Good | Very Good | Outstanding
---------------|-----|------------|------|-----------|------------
-0-0.001 | 0.001-0.15 | 0.15-0.20 | 0.20-0.70 | 0.70-0.95 | 0.95-1.00
+| Inappropriate | Bad        | Sufficient | Good      | Very Good | Outstanding |
+| ------------- | ---------- | ---------- | --------- | --------- | ----------- |
+| 0-0.001       | 0.001-0.15 | 0.15-0.20  | 0.20-0.70 | 0.70-0.95 | 0.95-1.00   |
 
 ## Computational Fluid Dynamics Result
 
@@ -63,4 +63,4 @@ Inappropriate | Bad | Sufficient | Good | Very Good | Outstanding
                            inlet|            221216.84
                        inlet-top|            664992.78
                           outlet|           -886209.81
-                             Net|           -0.1850242
+                             Net Mass Flow Rate|           -0.1850242

@@ -82,23 +82,27 @@ Outstanding | 0.95-1.00
                           outlet|           -886209.81
                              Net Mass Flow Rate|           -0.1850242
 
-Net mass flow rate is almost 0, and that's one good indication that our model conserved it's mass. The static pressure also has converged to a value between -7,000 to -8,000 Pa.
+Net mass flow rate is almost 0, and that's one good indication that our model conserved its mass. The static pressure also has converged to a value between -7,000 to -8,000 Pa.
 
 {% include image.html file="/wind-blade-turbine/FFF.1-2-01500.jpg" description="Surface Integral Static Pressure Convergence Plot" %}
-{% include image.html file="/wind-blade-turbine/FFF.1-2-01500.jpg" description="Zoom-in Plot" %}
+{% include image.html file="/wind-blade-turbine/FFF.1-2-01500-zoom.jpg" description="Zoom-in Plot" %}
+
+{% include image.html file="/wind-blade-turbine/residual-all.jpg" description="Residual Plot" %}
+
+From the residual plot, the results are converged after 1400 iterations when the residual for 𝜔 falls under the residual criteria (<1e-06 for this analysis). Higher iterations could be done to achieve more accurate result, but it's not the priority for this analysis.
 
 {% include image.html file="/wind-blade-turbine/local_blade_velocity.png" description="Local Blade Velocity" %}
 
 Local blade velocity increases with radius; the highest velocity recorded at the tip (98 m/s) and the lowest is near to the root of wind turbine blade (28 m/s).
 
-{% include image.html file="/wind-blade-turbine/velocity-streamline-wake.png" description="Velocity Streamlines" %}
+{% include image.html file="/wind-blade-turbine/velocity-streamline-wake.png" description="Velocity Streamlines Around The Wind Turbine" %}
 
 Wake effects are pronounced behind the the turbine (clear acceleration of the flow around the wake - gradient color change from blue to yellow/orange).
 
-{% include image.html file="/wind-blade-turbine/pressure-contour-front.png" description="VWind Turbine Blade Front - Pressure Contour" %}
-{% include image.html file="/wind-blade-turbine/pressure-contour-back.png" description="VWind Turbine Blade Back - Pressure Contour" %}
+{% include image.html file="/wind-blade-turbine/pressure-contour-front.png" description="Wind Turbine Blade Front Surface - Pressure Contour" %}
+{% include image.html file="/wind-blade-turbine/pressure-contour-back.png" description="Wind Turbine Blade Back Surface - Pressure Contour" %}
 
-The pressure is lower at the back surface of the blade compared to the front surface of the blade. The pressure difference between the front and back surface created a lift force that'll in turn help turning the blade around the z-axis.
+The pressure is lower at the back surface of the blade compared to the front surface of the blade. The pressure difference between the front and back surface created a lift force that'll in turn helps turning the blade around the z-axis.
 
 {% include image.html file="/wind-blade-turbine/pressure-contour-y-z-10.png" description="Y-Z Plane - Pressure Contour 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/velocity-vector-y-z-10.png" description="Y-Z Plane - Velocity Vector 10 Meters from root" %}

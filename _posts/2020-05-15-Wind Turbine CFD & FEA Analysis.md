@@ -71,6 +71,13 @@ Good | 0.20-0.70
 Very Good | 0.70-0.95
 Outstanding | 0.95-1.00
 
+{% include image.html file="/wind-blade-turbine/fea-mesh.PNG" description="Wind Blade Structure Mesh" %}
+{% include image.html file="/wind-blade-turbine/fea-mesh-statistic.PNG" description="Wind Blade Structure Mesh - Statistic" %}
+{% include image.html file="/wind-blade-turbine/fea-mesh-orthogonal.PNG" description="Wind Blade Structure Mesh - Orthogonality Quality" %}
+{% include image.html file="/wind-blade-turbine/fea-mesh-skewness.PNG" description="Wind Blade Structure Mesh - Skewness Quality" %}
+
+Meshes quality for finite element analysis on the wind turbine blade are quite exceptional, where we have high orthogonality and low skewness. These will help the FEA solution to converge quickly with less iterations. The number of FEA unknowns that need to be solved by ANSYS Mechanical are 100 times lower when compared to the CFD analysis.
+
 ## Computational Fluid Dynamics Result
 
  Mass Flow Rate               | (kg/s)
@@ -129,3 +136,21 @@ X (m) | Thickness (m)
 {% include image.html file="/wind-blade-turbine/homogonized orthotropic material.PNG" description="Material Properties" %}
 
 Wind turbine blades are now made of composite materials to reduce the weight of these massive machines. These values are representative of composite properties found in real wind turbine blades.
+
+## Finite Element Analysis (FEA) Result
+
+{% include image.html file="/wind-blade-turbine/total-deformation.gif" description="Total Deformation" %}
+{% include image.html file="/wind-blade-turbine/total-deformation-zoom.gif" description="Total Deformation - Zoom In" %}
+
+Maximum deformation occured at the tip of the wind turbin blade with magnitude of 38 cm, which correlate with the high pressure load at the wind blade tip during CFD analysis. Actual wind turbine do deform this way.
+
+{% include image.html file="/wind-blade-turbine/fea-equiv-stress-front.PNG" description="Equivalent Stress on Wind Turbine Blade - Front" %}
+{% include image.html file="/wind-blade-turbine/fea-equiv-stress-back.PNG" description="Equivalent Stress on Wind Turbine Blade - Back" %}
+
+{% include image.html file="/wind-blade-turbine/fea-force-reaction.PNG" description="Force Reaction at the root" %}
+{% include image.html file="/wind-blade-turbine/fea-force-reaction-result.PNG" description="Force Reaction at the root - Result" %}
+
+Almost all of the force reaction is in the x-direction. This is caused by the centripetal acceleration acting on this blade.
+
+{% include image.html file="/wind-blade-turbine/fea-moment.PNG" description="Moment Reaction at the root" %}
+{% include image.html file="/wind-blade-turbine/fea-moment-result.PNG" description="Moment Reaction at the root - Result" %}

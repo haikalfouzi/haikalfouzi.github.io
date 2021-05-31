@@ -140,8 +140,9 @@ Wind turbine blades are now made of composite materials to reduce the weight of 
 
 ## Finite Element Analysis (FEA) Result
 
-{% include image.html file="/wind-blade-turbine/total-deformation.gif" description="Total Deformation" %}
-{% include image.html file="/wind-blade-turbine/total-deformation-zoom.gif" description="Total Deformation - Zoom In" %}
+Total deformation of wind turbine blade.
+{% include youtube.html id="t4m-t7xGukI" %}
+{% include youtube.html id="7aBuRs0CC94" %}
 
 Maximum deformation occured at the tip of the wind turbin blade with magnitude of 38 cm, which correlate with the high pressure load at the wind blade tip during CFD analysis. Actual wind turbine do deform this way.
 

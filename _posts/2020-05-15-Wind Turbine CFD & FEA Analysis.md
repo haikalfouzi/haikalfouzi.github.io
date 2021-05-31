@@ -109,6 +109,7 @@ Wake effects are pronounced behind the the turbine (clear acceleration of the fl
 
 The pressure is lower at the back surface of the blade compared to the front surface of the blade. The pressure difference between the front and back surface created a lift force that'll in turn helps turning the blade around the z-axis.
 
+{% include image.html file="/wind-blade-turbine/plane-at-10m.png" description="Y-Z Plane 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/pressure-contour-y-z-10.png" description="Y-Z Plane - Pressure Contour 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/velocity-vector-y-z-10.png" description="Y-Z Plane - Velocity Vector 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/static-pressure-center.bmp" description="Static Pressure at Axis of Rotation (Z-Axis)" %}

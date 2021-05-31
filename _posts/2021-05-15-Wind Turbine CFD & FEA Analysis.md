@@ -7,6 +7,7 @@ title: CFD & FEA Analysis of a 1.5 MW General Electric Wind Turbine (1.5xle)
 
 This analysis covered the deformation due to aerodynamic loading of a wind turbine blade by performing a steady state one way fluid structure interaction (FSI). This analysis will use ANSYS Fluent to develop aerodynamic loading on the blade, the pressure loads on the blade, and the stresses and deformations that occurred on the blade.
 
+{% include image.html file="/wind-blade-turbine/GEA14954C15-MW-Broch.png" %}
 {% include image.html file="/wind-blade-turbine/Screenshot 2021-05-30 at 3.23.16 PM.png" description="GE Wind Turbine Technical Data" %}
 
 ## Wind Turbine Blade Profile

@@ -20,8 +20,6 @@ The blade is 43.2 meters long and starts with a cylindrical shape at the root an
 
 This blade also has pitch to vary as a function of radius, giving it a twist and the pitch angle at the blade tip is 4 degrees. The blade is made out of an orthotropic composite material, and it has varying thickness and spar inside of the blade for structural rigidity.
 
-{% include image.html file="/wind-blade-turbine/homogonized orthotropic material.PNG" description="Material Properties" %}
-
 ## Case Setup
 
 Governing equations are as follows (continuity and Navier-Stokes equations):
@@ -107,3 +105,27 @@ The pressure is lower at the back surface of the blade compared to the front sur
 {% include image.html file="/wind-blade-turbine/pressure-contour-y-z-10.png" description="Y-Z Plane - Pressure Contour 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/velocity-vector-y-z-10.png" description="Y-Z Plane - Velocity Vector 10 Meters from root" %}
 {% include image.html file="/wind-blade-turbine/static-pressure-center.bmp" description="Static Pressure at Axis of Rotation (Z-Axis)" %}
+
+## Wind Turbine Blade Structure
+
+{% include image.html file="/wind-blade-turbine/Parts.png" description="Wind Turbine Blade Outer Surface and Spar" %}
+
+The blade is composed of an outer surface and an inner spar. The thickness of the outside surface linearly decreases from 0.1 m at the root to 0.005 m at the tip. The spar has a similar thickness behavior with 0.1 m at its closest point to the root and 0.03 m at the tip.
+
+Surface Profile
+
+X (m) | Thickness (m)
+-----------|-----------
+-1 | 0.1
+-44.2 | 0.005
+
+Spar Profile
+
+X (m) | Thickness (m)
+-----------|-----------
+-3 | 0.1
+-44.2 | 0.03
+
+{% include image.html file="/wind-blade-turbine/homogonized orthotropic material.PNG" description="Material Properties" %}
+
+Wind turbine blades are now made of composite materials to reduce the weight of these massive machines. These values are representative of composite properties found in real wind turbine blades.

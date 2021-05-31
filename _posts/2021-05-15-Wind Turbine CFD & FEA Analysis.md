@@ -66,7 +66,7 @@ Bad | 0.001-0.15
 Sufficient | 0.15-0.20
 Good | 0.20-0.70
 Very Good | 0.70-0.95
-Outstanding | 0.95-1.00	
+Outstanding | 0.95-1.00
 
 ## Computational Fluid Dynamics Result
 
@@ -76,3 +76,6 @@ Outstanding | 0.95-1.00
                        inlet-top|            664992.78
                           outlet|           -886209.81
                              Net Mass Flow Rate|           -0.1850242
+
+
+Ongoing Update...

@@ -144,6 +144,7 @@ Total deformation of wind turbine blade.
 {% include youtube.html id="t4m-t7xGukI" %}
 {% include youtube.html id="7aBuRs0CC94" %}
 
+
 Maximum deformation occured at the tip of the wind turbin blade with magnitude of 38 cm, which correlate with the high pressure load at the wind blade tip during CFD analysis. Actual wind turbine do deform this way.
 
 {% include image.html file="/wind-blade-turbine/fea-equiv-stress-front.PNG" description="Equivalent Stress on Wind Turbine Blade - Front" %}

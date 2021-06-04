@@ -1,6 +1,6 @@
 ---
 layout: post
-title: FEA Analysis on Rocketdyne F-1 Rocket Engine - Flanged Nozzle Bolt
+title: CFD & FEA Analysis of Falcon 9 Grid Fin During Reentry Stage
 ---
 
 TBD.

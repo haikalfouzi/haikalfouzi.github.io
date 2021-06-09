@@ -25,7 +25,7 @@ Bolt and Nut|A-286 Steel|29000000|0.31|0.0000095
 
 The pressure due to the exhaust gas in the nozzle is calculated using 1D gas dynamics. It is assumed to vary linearly along the nozzle axis. The pressure at the exit (z=0)  is 12.17 psi and the pressure at the entrance to the mid-nozzle is 47.72 psi.
 
-The regeneration channels are omitted in the model. In exchange, a free body diagram is used to deduce the equivalent forces on the mid nozzle and lower nozzle (the upper nozzle is not modeled here). This force pair is modeled as two separate forces, each of 1000 lbf. The gas temperature is 700 F which causes thermal strain. We assume that bolt is pre-loaded to 50% of its breaking strength.
+The regeneration channels are omitted in the model. In exchange, a free body diagram is used to deduce the equivalent forces on the mid nozzle and lower nozzle (the upper nozzle is not modeled here). This force pair is modeled as two separate forces, each of 1000 lbf. The gas temperature is 700 F which causes thermal strain. The bolt is assumed to be pre-loaded to 50% of its breaking strength.
 
 ## Essential Boundary Conditions & Governing Equations
 

@@ -14,7 +14,7 @@ The goal of this research is to analyze the bolted flange joint that connect the
 
 {% include image.html file="/f1-engine/SaturnF1EngineDiagram.png" description="Saturn F1 Engine Diagram" %}
 {% include image.html file="/f1-engine/model_expl.png" description="Overall Simplified ANSYS Model" %}
-{% include image.html file="/f1-engine/spacecraft_assembly4.png" description="100 Bolts Securing Middle and Lower Part of the Nozzle" %}
+{% include image.html file="/f1-engine/spacecraft_assembly4.png" description="200 Bolts Securing Middle and Lower Part of the Nozzle" %}
 
 Below are the material properties that are going to be used for this analysis.
 

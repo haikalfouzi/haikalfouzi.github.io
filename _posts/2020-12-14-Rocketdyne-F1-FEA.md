@@ -55,4 +55,12 @@ Based on the projected area of pressure in the mid & lower part of nozzle (shade
 
 The calculated projected area in the mid & lower part of nozzle is to be 9,699 $$in^2$$, thus the net pressure force based on the average gas pressure at the entrance of mid nozzle and at the exit of lower nozzle is 290,970 $$lbf$$.
 
-Our model is scale to 1:400, so the net pressure force of 1/400th of the model is 727 $$lbf$$.   
+Our model is scale to 1:400, so the net pressure force of 1/400th of the model is 727 $$lbf$$.
+
+### Hoop Stress
+
+{% include image.html file="/f1-engine/hoop stress.png" %}
+
+We can estimate the hoop stress or the stress in the circumferential direction of the nozzle. Based on the [pressure vessel theory](https://en.wikipedia.org/wiki/Cylinder_stress#Hoop_stress), we can find the hoop stress is given as follow:
+
+$$\begin{equation}\sigma_{\theta} = \frac{Pr}{t}\end{equation}$$

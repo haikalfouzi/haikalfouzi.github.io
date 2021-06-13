@@ -47,7 +47,7 @@ Governing equations are as follows:
 {% include image.html file="/f1-engine/matrixmodel.png" description="Constitutive Matrix Model" %}
 
 ## Initial Calculation/Prediction
-### Axial Reaction
+### Axial Reaction of Thrust
 
 {% include image.html file="/f1-engine/axial.png" %}
 
@@ -57,7 +57,7 @@ The calculated projected area in the mid & lower part of nozzle is to be 9,699 $
 
 Our model is scale to 1:400, so the net pressure force of 1/400th of the model is 727 $$lbf$$.
 
-### Hoop Stress
+### Hoop Stress on Nozzle
 
 {% include image.html file="/f1-engine/hoop stress.png" %}
 
@@ -67,5 +67,12 @@ $$\begin{equation}\sigma_{\theta} = \frac{Pr}{t}\end{equation}$$
 
 where $$P$$ is the pressure, $$r$$ is the radius, and $$t$$ is the wall thickness. Plugging in all the value and we'll get estimated hoop stress for the nozzle.
 
-$$\begin{eqnarray}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in}\\
-  & = 1692 in\end{eqnarray}$$
+$$\begin{equation}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in} = 1692 in\end{equation}$$
+
+### Thermal Strain of the Nozzle
+
+{% include image.html file="/f1-engine/thermal strain.png" %}
+
+The estimated deformation due to thermal stress can be calculated using the following thermal strain formula as shown below:
+
+$$\begin{eqnarray}\frac{\deltal}{L} = \alpha\DeltaT\\\frac{\deltal}{160 in} = (1e^{-5})(700 ℉ - 70 ℉) = 1.008 in\end{eqnarray}$$

@@ -76,3 +76,11 @@ $$\begin{equation}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in} = 1692 in
 The estimated deformation due to thermal stress can be calculated using the following thermal strain formula as shown below:
 
 $$\begin{eqnarray}\frac{\deltal}{L} = \alpha\DeltaT\\\frac{\deltal}{160 in} = (1e^{-5})(700 ℉ - 70 ℉) = 1.008 in\end{eqnarray}$$
+
+### Bolt Preload Deformation
+
+{% include image.html file="/f1-engine/bolt preload.png" %}
+
+The bolt is pre-loaded with 50% of it's ultimate tensile strength which is 9280$$lb$$, so the load applied is 4640$$lb$$, and on each side is 2320$$lb$$.
+
+$$\begin{eqnarray}{\Deltal} = \frac{FL}{EA}\\{\Deltal} = \frac{2320lbf * 0.5 in}{(2.9*{10^7}psi)*(3.8*{10^-2}in^2)} = 0.001 in\end{eqnarray}$$

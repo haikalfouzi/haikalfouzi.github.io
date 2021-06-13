@@ -51,6 +51,8 @@ Governing equations are as follows:
 
 {% include image.html file="/f1-engine/axial.png" %}
 
-$$\begin{equation}\label{label}
-\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(s)ds = f(x)
-\end{equation}$$
+Based on the projected area of pressure in the mid & lower part of nozzle (shaded concentric circle), we can calculate the net force in the negative z-direction. That would be the net reaction force for the whole geometry, assuming that the top mid part of the nozzle is fixed to wall/support.
+
+The calculated projected area in the mid & lower part of nozzle is to be 9,699 $$in^2$$, thus the net pressure force based on the average gas pressure at the entrance of mid nozzle and at the exit of lower nozzle is 290,970 $$lbf$$.
+
+Our model is scale to 1:400, so the net pressure force of 1/400th of the model is 727 $$lbf$$.   

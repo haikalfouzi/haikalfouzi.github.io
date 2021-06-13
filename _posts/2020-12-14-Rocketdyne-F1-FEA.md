@@ -64,3 +64,8 @@ Our model is scale to 1:400, so the net pressure force of 1/400th of the model i
 We can estimate the hoop stress or the stress in the circumferential direction of the nozzle. Based on the [pressure vessel theory](https://en.wikipedia.org/wiki/Cylinder_stress#Hoop_stress), we can find the hoop stress is given as follow:
 
 $$\begin{equation}\sigma_{\theta} = \frac{Pr}{t}\end{equation}$$
+
+where $$P$$ is the pressure, $$r$$ is the radius, and $$t$$ is the wall thickness. Plugging in all the value and we'll get estimated hoop stress for the nozzle.
+
+$$\begin{eqnarray}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in}\\
+  & = 1692 in\end{eqnarray}$$

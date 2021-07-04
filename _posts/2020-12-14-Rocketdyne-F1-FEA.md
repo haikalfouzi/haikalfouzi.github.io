@@ -118,7 +118,7 @@ Frictionless support was added to the top of middle nozzle.
 
 ### Applying Pressure Load
 
-Pressure load due to expansion of hot gas due to combustion need to be applied to surfaces that are exposed to the hot gas including the regeneration channel near to the bolt and nuts.
+Pressure load due to expansion of hot gas due to combustion needs to be applied to surfaces that are exposed to the hot gas including the regeneration channel near to the bolt and nuts.
 
 {% include image.html file="/f1-engine/pressure-load.PNG" %}
 {% include image.html file="/f1-engine/pressure-load-time.PNG" description="Pressure Load Time Step" %}
@@ -142,11 +142,11 @@ Forces from the regeneration channel can be simulated by applying load in z-dire
 
 ### Force Convergence
 
-{% include image.html file="/f1-engine/force-convergence.PNG" description="Force Convergence Result - Solution Converged After 11th Iterations" %}
+{% include image.html file="/f1-engine/force-convergence.png" description="Force Convergence Result - Solution Converged After 11th Iterations" %}
 
 ### Total Deformation
 
-{% include image.html file="/f1-engine/total-deformation.PNG" %}
+{% include image.html file="/f1-engine/total-deformation.png" %}
 {% include image.html file="/f1-engine/total-deformation-stat.PNG" %}
 
 Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction.

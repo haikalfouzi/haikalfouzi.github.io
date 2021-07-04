@@ -89,7 +89,7 @@ $$\begin{eqnarray}\Delta l = \frac{FL}{EA}\\\Delta l = \frac{2320lbf * 0.5 in}{(
 
 Meshes were set up using 2 different body sizing; 0.3 inches element size for the middle and lower part of the nozzle, and 0.075 inches element size for the bolt & nuts. Statistics of the following mesh setup are as follow:
 
-{% include image.html file="/f1-engine/tetrahedron-mesh.PNG" description="Tetrahedrosn Meshes Setup" %}
+{% include image.html file="/f1-engine/tetrahedron-mesh.PNG" description="Tetrahedron Meshes Setup" %}
 {% include image.html file="/f1-engine/tetrahedron-mesh-stat.PNG" description="Meshes Statistics" %}
 
 The number of nodes exceed the maximum number of nodes for ANSYS student, so we need to reduce the number using different meshes method; Hex dominant. Below are the meshes generated and it's statistics:

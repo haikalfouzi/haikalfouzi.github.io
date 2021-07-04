@@ -92,7 +92,48 @@ Meshes were set up using 2 different body sizing; 0.3 inches element size for th
 {% include image.html file="/f1-engine/tetrahedron-mesh.PNG" description="Tetrahedrosn Meshes Setup" %}
 {% include image.html file="/f1-engine/tetrahedron-mesh-stat.PNG" description="Meshes Statistics" %}
 
-The number of nodes exceed the limit of number of nodes for ANSYS student, so we need to reduce the number using different meshes method; Hex dominant. Below are the meshes generated and it's statistics:
+The number of nodes exceed the maximum number of nodes for ANSYS student, so we need to reduce the number using different meshes method; Hex dominant. Below are the meshes generated and it's statistics:
 
 {% include image.html file="/f1-engine/hex-meshes.PNG" description="Hex Dominant Meshes Setup" %}
 {% include image.html file="/f1-engine/hex-meshes-stat.PNG" description="Meshes Statistics" %}
+
+## Boundary Conditions Setup
+### Applying Thermal Strain
+
+Thermal strain was applied to all the part of the nozzle including the bolt and nuts using time steps series as follows:
+
+{% include image.html file="/f1-engine/thermal-strain-apply.PNG" %}
+
+### Applying Bolt Preload
+
+Load bolt pretension was applied to the surface of the bolt thread as follows:
+
+{% include image.html file="/f1-engine/bolt-pretension-load.PNG" %}
+
+### Applying Boundary Conditions
+
+Frictionless support was added to the top of middle nozzle.
+
+{% include image.html file="/f1-engine/frictionless-support.PNG" %}
+
+### Applying Pressure Load
+
+Pressure load due to expansion of hot gas due to combustion need to be applied to surfaces that are exposed to the hot gas including the regeneration channel near to the bolt and nuts.
+
+{% include image.html file="/f1-engine/pressure-load.PNG" %}
+{% include image.html file="/f1-engine/pressure-load-time.PNG" description="Pressure Load Time Step" %}
+
+### Applying Load due to Regeneration Channel
+
+Forces from the regeneration channel can be simulated by applying load in z-direction at the surface between the middle and lower part of the nozzle.
+
+{% include image.html file="/f1-engine/force-regen-upper.PNG" description="Simulated Regeneration Channel Load at Middle Nozzle" %}
+{% include image.html file="/f1-engine/force-regen-lower.PNG" description="Simulated Regeneration Channel Load at Lower Nozzle" %}
+
+### Contact Surfaces
+
+{% include image.html file="/f1-engine/bolt-to-nut.PNG" description="Bolt to Nut" %}
+{% include image.html file="/f1-engine/lower-mid-nozzle.PNG" description="Lower to Middle Nozzle" %}
+{% include image.html file="/f1-engine/bolt-mid-nozzle.PNG" description="Middle Nozzle to Bolt" %}
+{% include image.html file="/f1-engine/bolt-lower-nozzle.PNG" description="Lower Nozzle to Bolt" %}
+{% include image.html file="/f1-engine/bolt-contact.PNG" description="Bolt Contact" %}

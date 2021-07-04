@@ -75,7 +75,7 @@ $$\begin{equation}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in} = 1692 in
 
 The estimated deformation due to thermal stress can be calculated using the following thermal strain formula as shown below:
 
-$$\begin{eqnarray}\frac{\delta l}{L} = \alpha\Delta T\\\frac{\delta l}{160 in} = (1e^{-5})(700 ℉ - 70 ℉) = 1.008 in\end{eqnarray}$$
+$$\begin{eqnarray}\frac{\delta l}{L} = \alpha\Delta T\\\frac{\delta l}{160 in} = (1e^{-5})(700 ℉ - 70 ℉) = 1.008 in\label{thermal_strain}\end{eqnarray}$$
 
 ### Bolt Preload Deformation
 
@@ -149,6 +149,6 @@ Forces from the regeneration channel can be simulated by applying load in z-dire
 {% include image.html file="/f1-engine/total-deformation.png" %}
 {% include image.html file="/f1-engine/total-deformation-stat.PNG" %}
 
-Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction.
+Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction \eqref{thermal}.
 
 {% include image.html file="/f1-engine/total-deformation-zoom.gif" description="Deformation Around the Bolted Nozzle Flanged" %}

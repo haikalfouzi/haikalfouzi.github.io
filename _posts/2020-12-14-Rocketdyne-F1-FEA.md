@@ -67,7 +67,7 @@ $$\begin{equation}\sigma_{\theta} = \frac{Pr}{t}\end{equation}$$
 
 where $$P$$ is the pressure, $$r$$ is the radius, and $$t$$ is the wall thickness. Plugging in all the value and we'll get estimated hoop stress for the nozzle.
 
-$$\begin{equation}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in} = 1692 in\end{equation}$$
+$$\begin{equation}\sigma_{\theta} = \frac{12.17 psi * 69.5 in}{0.5 in} = 1692 in\label{hoop-stress}\end{equation}$$
 
 ### Thermal Strain of the Nozzle
 
@@ -152,3 +152,13 @@ Forces from the regeneration channel can be simulated by applying load in z-dire
 Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction \eqref{thermal_strain}.
 
 {% include image.html file="/f1-engine/total-deformation-zoom.gif" description="Deformation Around the Bolted Nozzle Flanged" %}
+
+### Hoop Stress
+
+{% include image.html file="/f1-engine/normal-stress-lower.png" %}
+
+Normal Hoop Stress $$\sigma_{\theta}$$ is around 1685 $$psi$$ which is almost the same with our initial hoop stress calculation \eqref{hoop-stress}.
+
+### Equivalent Stress on Bolt
+
+{% include image.html file="/f1-engine/eqv-stress-bolt.png" description="Equivalent Stress on Bolt" %}

@@ -149,6 +149,6 @@ Forces from the regeneration channel can be simulated by applying load in z-dire
 {% include image.html file="/f1-engine/total-deformation.png" %}
 {% include image.html file="/f1-engine/total-deformation-stat.PNG" %}
 
-Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction \eqref{thermal}.
+Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction \eqref{thermal_strain}.
 
 {% include image.html file="/f1-engine/total-deformation-zoom.gif" description="Deformation Around the Bolted Nozzle Flanged" %}

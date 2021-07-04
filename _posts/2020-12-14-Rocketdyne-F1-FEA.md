@@ -157,7 +157,7 @@ Minimum deformation occured at the fixed support of the middle nozzle, and maxim
 
 {% include image.html file="/f1-engine/normal-stress-lower.png" %}
 
-Normal Hoop Stress $$\sigma_{\theta}$$ is around 1685 $$psi$$ which is almost the same with our initial hoop stress calculation \eqref{hoop-stress}.
+Normal Hoop Stress $$\sigma_{\theta}$$ is around 1685 $$psi$$ which is within ~1% range our initial hoop stress calculation \eqref{hoop-stress}.
 
 ### Equivalent Stress on Bolt
 

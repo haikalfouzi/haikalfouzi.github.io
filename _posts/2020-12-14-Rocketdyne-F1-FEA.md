@@ -161,6 +161,7 @@ Normal Hoop Stress $$\sigma_{\theta}$$ is around 1685 $$psi$$ which is almost th
 
 ### Equivalent Stress on Bolt
 
+{% include image.html file="/f1-engine/bolt-stress.gif" %}
 {% include image.html file="/f1-engine/eqv-stress-bolt.png" description="Equivalent Stress on Bolt" %}
 
 ### Gap between Middle and Lower Nozzles

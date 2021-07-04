@@ -137,3 +137,18 @@ Forces from the regeneration channel can be simulated by applying load in z-dire
 {% include image.html file="/f1-engine/bolt-mid-nozzle.PNG" description="Middle Nozzle to Bolt" %}
 {% include image.html file="/f1-engine/bolt-lower-nozzle.PNG" description="Lower Nozzle to Bolt" %}
 {% include image.html file="/f1-engine/bolt-contact.PNG" description="Bolt Contact" %}
+
+## Finite Element Analysis Result
+
+### Force Convergence
+
+{% include image.html file="/f1-engine/force-convergence.PNG" description="Force Convergence Result - Solution Converged After 11th Iterations" %}
+
+### Total Deformation
+
+{% include image.html file="/f1-engine/total-deformation.PNG" %}
+{% include image.html file="/f1-engine/total-deformation-stat.PNG" %}
+
+Minimum deformation occured at the fixed support of the middle nozzle, and maximum deformation of 1.0992 $$in$$ happened at the lower nozzle. These results are inline with our initial calculation and prediction.
+
+{% include image.html file="/f1-engine/total-deformation-zoom.gif" description="Deformation Around the Bolted Nozzle Flanged" %}

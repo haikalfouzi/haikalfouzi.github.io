@@ -14,6 +14,24 @@ The trajectory optimization problems are nontrivial due to nonconvex control con
 
 # Definition
 
-$$r$$ = position
-$$T$$ = Thrust vector (N)
-$$g$$ = Gravity vector of planet ($$m/s^2$$)
+$r$ = position
+$T$ = Thrust vector (N)
+$g$ = Gravity vector of planet ($$m/s^{2}$$)
+$m(t)$ = Mass of vehicle
+$\alpha$ = Constant describing mass consumption rate
+$T_1$ = Lower Thrust Bound
+$T_2$ = Upper Thrust Bound
+$\rho_1$ = Lower Thrust Bound
+$\rho_2$ = Upper Thrust Bound
+$m_wet$ = Total mass of vehicle including propellant
+$t_f$ = Length of finite time
+$x$ = Augmented state vector defined as $[r, \dotr]^T$
+$r_z(t)$ = Vertical position
+$r_x(t)$ = Downrange position
+$\Theta_alt$ = Glideslope constraint
+$S_j, v_j, a_j$ = Matrices, vectors, and scalars defining convex state constraints
+$I_sp$ = Specific impulse of the rocket engine
+$u$ = Control acceleration put on by the thrusters
+$\Gamma$ = Slack variable required for convexification
+$log$ = Natural logarithm
+$\vertx\vert$ = Euclidian 2-norm of vector x

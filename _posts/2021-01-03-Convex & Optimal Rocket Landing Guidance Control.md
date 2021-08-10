@@ -99,15 +99,20 @@ $$\begin{equation}\Theta_{alt} = \arctan \frac{r_z(t)}{r_x(t)}\end{equation}$$
 ### Thrust Control Constraints
 Control constraints (upper bound and lower bound) on thrust can be expressed as below:
 
-$$\begin(eqnarray)0<T_1<T(t)<T_2, \forall t \in [0,t_f]\\\rho_1 \leq \vert \vert T(t) \vert \vert \let \rho_2\\\rho_2 > \rho_1 > 0\end(eqnarray)
+$$\begin(eqnarray)0<T_1<T(t)<T_2, \forall t \in [0,t_f]\\\rho_1 \leq \vert \vert T(t) \vert \vert \let \rho_2\\\rho_2 > \rho_1 > 0\end(eqnarray)$$
 
 The final time is denote as $t_f$
 
 {% include image.html file="/landing/control constraints.png" description="Three control constraints" %}
 
 Initial conditions are provided as below:
+
 $m(0)=m_{wet}$ - Total mass of the vehicle including structure, avionics, non-consummables, and fuel.
+
 $x(0)=x_0$
+
 $x(t_f)=0$
+
 $x=[r \dot r]^T$ - Constructed state of the vehicle
+
 $r_z(t) > 0$ - Vehicle cannot travel through the ground

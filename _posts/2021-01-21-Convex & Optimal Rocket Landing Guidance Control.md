@@ -14,5 +14,6 @@ The trajectory optimization problems are nontrivial due to nonconvex control con
 
 # Definition
 
-`$r` = position
-`$T` = Thrust vector (N)
+$$r$$ = position
+$$T$$ = Thrust vector (N)
+$$g$$ = Gravity vector of planet ($$m/s^2$$)

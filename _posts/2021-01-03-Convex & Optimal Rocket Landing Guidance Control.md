@@ -98,11 +98,11 @@ $$\begin{equation}\Theta_{alt} = \arctan \frac{r_z(t)}{r_x(t)}\end{equation}$$
 
 Additionally, it is assumed that constraints take the following [affine form](https://mathworld.wolfram.com/AffineFunction.html):
 
-$$\begin(equation)\vert \vert S_j x(t) - v_j \vert \vert + C^T_jx(t) + a_j \leq 0\end(equation)$$
+$$\begin(equation)\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0\end(equation)$$
 
-where $S_j \in \Bbb R^4$, $n_j \leq 4$, $v_j \in \Bbb R^n_j$, $a_j \in \Bbb R$. Similarly, we can express the glideslope constraint like
+where $S_j \in \Bbb R^4$, $n_j \leq 4$, $v_j \in \Bbb R^n_j$, $a_j \in \Bbb R$. Similarly, we can express the glide slope constraint like
 
-$$\begin(equation)\vert \vert Sx \vert \vert + c^T_jx \leq 0\end(equation)$$
+$$\begin(equation)\vert \vert Sx \vert \vert + c^T_j x \leq 0\end(equation)$$
 
 where
 $$\begin(equation)S=$\begin{bmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\end{bmatrix}$, c =$\begin{bmatrix}-\tan\Theta_{alt} & 0 & 0 & 0\end{bmatrix}$^T \end(equation)$$

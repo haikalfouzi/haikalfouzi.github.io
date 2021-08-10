@@ -99,8 +99,10 @@ $$\begin{equation}\Theta_{alt} = \arctan \frac{r_z(t)}{r_x(t)}\end{equation}$$
 ### Thrust Control Constraints
 Control constraints (upper bound and lower bound) on thrust can be expressed as below:
 
-$$\begin{equation})0 \lt T_1 \lt T(t) \lt T_2, \forall t \in [0,t_f]\end{equation}$$
+$$\begin{equation}0 \lt T_1 \lt T(t) \lt T_2, \forall t \in [0,t_f]\end{equation}$$
+
 $$\begin{equation}\rho_1 \leq \vert \vert T(t) \vert \vert \leq \rho_2\end{equation}$$
+
 $$\begin{equation}\rho_2 \gt \rho_1 \gt 0\end{equation}$$
 
 The final time is denote as $t_f$

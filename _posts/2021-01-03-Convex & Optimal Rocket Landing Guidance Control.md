@@ -82,7 +82,7 @@ $$\begin{eqnarray}T_c = (nT\cos \phi)e\\\alpha = (I_{sp}g\cos \phi)^{-1}\end{eqn
 
 But for simplicity, we'll assume vehicle with one engine and cantilever angle $\phi$ of 0 degrees.
 
-{% include image.html file="/landing/glideslope constraint.png" description="Glide slope Constraint" %}
+{% include image.html file="/landing/glideslope constraint.png" description="Glide Slope Constraint" %}
 
 The main state constraints are the glide slope constraint on the position vector and an upper bound constraint on the velocity vector magnitude.
 1. The glide slope constraint is described in figure above and is imposed to ensure that the lander stays at a safe distance from the ground until it reaches its target.
@@ -96,6 +96,16 @@ When landing on a planetary body without global positioning, terrain relative na
 
 $$\begin{equation}\Theta_{alt} = \arctan \frac{r_z(t)}{r_x(t)}\end{equation}$$
 
+Additionally, it is assumed that constraints take the following [affine form](https://mathworld.wolfram.com/AffineFunction.html):
+
+$$\begin(equation)\vert \vert S_j x(t) - v_j \vert \vert + C^T_jx(t) + a_j \leq 0\end(equation)$$
+
+where $S_j \in \Bbb R^4$, $n_j \leq 4$, $v_j \in \Bbb R^n_j$, $a_j \in \Bbb R$. Similarly, we can express the glideslope constraint like
+
+$$\begin(equation)\vert \vert Sx \vert \vert + c^T_jx \leq 0\end(equation)$$
+
+where
+
 ### Thrust Control Constraints
 Control constraints (upper bound and lower bound) on thrust can be expressed as below:
 
@@ -105,9 +115,9 @@ $$\begin{equation}\rho_1 \leq \vert \vert T(t) \vert \vert \leq \rho_2\end{equat
 
 $$\begin{equation}\rho_2 \gt \rho_1 \gt 0\end{equation}$$
 
-The final time is denote as $t_f$
+The final time is denote as $t_f$.
 
-{% include image.html file="/landing/control constraints.png" description="Three control constraints" %}
+{% include image.html file="/landing/control constraints.png" description="Three Control Constraints - (b) & (c) constraints are ignored since we only utilized one engine per vehicle" %}
 
 Initial conditions are provided as below:
 

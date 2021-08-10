@@ -113,6 +113,6 @@ $x(0)=x_0$
 
 $x(t_f)=0$
 
-$x=[r \dot r]^T$ - Constructed state of the vehicle
+$x=[r, \dot r]^T$ - Constructed state of the vehicle
 
 $r_z(t) > 0$ - Vehicle cannot travel through the ground

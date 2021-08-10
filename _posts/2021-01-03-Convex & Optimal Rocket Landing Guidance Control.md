@@ -80,8 +80,34 @@ For $nth$ identical thrusters with nominal thrust level $T$ and specific impulse
 
 $$\begin{eqnarray}T_c = (nT\cos \phi)e\\\alpha = (I_{sp}g\cos \phi)^{-1}\end{eqnarray}$$
 
-But for simplicity, we'll assume vehicle with one engine and cantilever angle of 0 degrees.
+But for simplicity, we'll assume vehicle with one engine and cantilever angle $\phi$ of 0 degrees.
 
-{% include image.html file="/landing/glideslope constraint.png" description="Glideslope Constraint" %}
+{% include image.html file="/landing/glideslope constraint.png" description="Glide slope Constraint" %}
 
-The main state constraints are the glide slope constraint on the position vector and an upper bound constraint on the velocity vector magnitude. The glide slope constraint is described in figure above and is imposed to ensure that the lander stays at a safe distance from the ground until it reaches its target. The upper bound on velocity is needed to avoid supersonic velocities for planets with atmosphere, where the control thrusters can become unreliable. Both of these constraints are convex and fit well to the convex optimization framework.
+The main state constraints are the glide slope constraint on the position vector and an upper bound constraint on the velocity vector magnitude.
+1. The glide slope constraint is described in figure above and is imposed to ensure that the lander stays at a safe distance from the ground until it reaches its target.
+2. Three control constraint of the thrust vector $T$
+* The convex upper bound on thrust; upper bound on velocity is needed to avoid supersonic velocities for planets with atmosphere, where the control thrusters can become unreliable.
+* The nonconvex lower bound on thrust; lower bound on velocity is due to the engine thrust cannot be continuously throttled down to 0
+* Thrust pointing constraint; this constraint is ignored as per our simplification where only one engine is used in the vehicle.
+
+### Glide Slope Constraint
+When landing on a planetary body without global positioning, terrain relative navigation is used to restrict the altitude of the vehicle to avoid vehicle crashing to the unknown terrain.
+
+$$\begin{equation}\Theta_{alt} = \arctan \frac{r_z(t)}{r_x(t)}\end{equation}$$
+
+### Thrust Control Constraints
+Control constraints (upper bound and lower bound) on thrust can be expressed as below:
+
+$$\begin(eqnarray)0<T_1<T(t)<T_2, \forall t \in [0,t_f]\\\rho_1 \leq \vert \vert T(t) \vert \vert \let \rho_2\\\rho_2 > \rho_1 > 0\end(eqnarray)
+
+The final time is denote as $t_f$
+
+{% include image.html file="/landing/control constraints.png" description="Three control constraints" %}
+
+Initial conditions are provided as below:
+$m(0)=m_{wet}$ - Total mass of the vehicle including structure, avionics, non-consummables, and fuel.
+$x(0)=x_0$
+$x(t_f)=0$
+$x=[r \dot r]^T$ - Constructed state of the vehicle
+$r_z(t) > 0$ - Vehicle cannot travel through the ground

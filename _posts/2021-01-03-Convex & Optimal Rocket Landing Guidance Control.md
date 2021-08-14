@@ -136,7 +136,7 @@ $r_z(t) > 0$ - Vehicle cannot travel through the ground
 #### Problem 1 - Nonconvex Minimum Fuel Problem (thrust constraint)
 Nonconvex minimum fuel problem can be summarized with the following set of equations:
 
-$$\begin{equation}max_{t_f,T}m(t_f) = min_{t_f,T}\int_0^{t_f} \vert \vert T(t) \vert \vert dt \end{equation}$$
+$$\begin{equation}\max_{t_f,T}m(t_f) = \min_{t_f,T}\int_0^{t_f} \vert \vert T(t) \vert \vert dt \end{equation}$$
 
 Subject to:
 $$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \end{eqnarray}$$
@@ -149,7 +149,7 @@ $$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=
 
 #### Problem 2 - Convexification of Problem 1
 
-$$\begin{equation}min_{t_f,T,\Gamma}\int_0^{t_f} \vert \vert \Gamma(t) \vert \vert dt \end{equation}$$
+$$\begin{equation}\min_{t_f,T,\Gamma}\int_0^{t_f} \vert \vert \Gamma(t) \vert \vert dt \end{equation}$$
 
 Subject to:
 $$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \\
@@ -197,7 +197,7 @@ $$\begin{eqnarray}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha
 
 #### Problem 3 - Simplification with Glide Slope Constraint
 
-$$\begin{eqnarray}min_{t_f,u,\sigma} \int_0^{t_f} \sigma (t)dt\end{eqnarray}$$
+$$\begin{eqnarray}\min_{t_f,u,\sigma} \int_0^{t_f} \sigma (t)dt\end{eqnarray}$$
 
 Subject to:
 $$\begin{eqnarray}\ddot r(t) = g + u(t)\\\dot z(t)=-\alpha \sigma (t)\\
@@ -219,7 +219,7 @@ where
 $$\begin{equation}t=\frac{t-t_k}{\Delta t},\forall t \in [t_k,t_{k+1}),k=0,...,N-1 \end{equation}$$
 
 Thus:
-$$\begin{equation}min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n \end{equation}$$
+$$\begin{equation}\min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n \end{equation}$$
 
 Subject to: for $k=0,...,N$
 $$\begin{eqnarray}r_{k+1}=r_k + \frac{\Delta t}{2}(\dot r_k + \dot r_{k+1})+\frac{\Delta t^2}{12}(u_{k+1}-u_k)\\

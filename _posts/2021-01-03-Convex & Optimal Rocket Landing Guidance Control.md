@@ -182,11 +182,11 @@ This inequality now describes a convex set. However, when we consider $m$ by its
 
 $$\begin{equation}\rho_1 exp(-z(t)) \leq \sigma (t) \leq \rho_2 exp(-z(t)), \forall t \in [0,t_f] \label{inequality_1} \end{equation}$$
 
-The left side of the inequality in \ref{inequality_1} defines a convex feasible region, but the right part doesn't. We'll use Taylor expansion of the exponential to achieve second-order cone and linear approximation to be used in our problem. The first part of \ref{inequality_1} can be approximate by the first three terms of the series, or second-order cone:
+The left side of the inequality in eqn.\ref{inequality_1} defines a convex feasible region, but the right part doesn't. We'll use Taylor expansion of the exponential to achieve second-order cone and linear approximation to be used in our problem. The first part of eqn.\ref{inequality_1} can be approximate by the first three terms of the series, or second-order cone:
 
 $$\begin{equation}\rho_1 exp(-z_0)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \end{equation}$$
 
-Where $z_0$ is a given constant. The right side of \ref{inequality_1} can be linear or the first two terms of the Taylor expansion. Therefore
+Where $z_0$ is a given constant. The right side of eqn.\ref{inequality_1} can be linear or the first two terms of the Taylor expansion. Therefore
 
 $$\begin{eqnarray}\sigma \leq \rho_2 exp(-z_0)[1-(z-z_0)]\\
 \mu_1 = \rho_1 exp(-z_0), \mu_2 = \rho_2 exp(-z_0)\end{eqnarray}$$

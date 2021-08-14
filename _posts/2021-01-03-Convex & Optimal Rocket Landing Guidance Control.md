@@ -196,3 +196,24 @@ We now have a second order cone formulation where $z_0(t) = log(m_{wet}-\alpha \
 $$\begin{eqnarray}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha \rho_1 t)\end{eqnarray}$$
 
 #### Problem 3 - Simplification with Glide Slope Constraint
+
+$$\begin{eqnarray}min_{t_f,u,\sigma} \int_0^{t_f} \sigma (t)dt\end{eqnarray}$$
+
+Subject to:
+$$\begin{eqnarray}\ddot r(t) = g + u(t)\\\dot z(t)=-\alpha \sigma (t)\end{eqnarray}$$
+$$\begin{equation}\vert \vert u(t) \vert \vert \leq \sigma (t)\end{equation}$$
+$$\begin{eqnarray}u_1(t)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \leq u_2(t)[1-(z-z_0)] \end{eqnarray}$$
+$$\begin{equation}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha \rho_1 t)\end{equation}$$
+$$\begin{equation}\vert \vert r_x(t) \vert \vert \leq \beta r_z(t)\end{equation}$$
+$$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
+
+We have replaced the general affine constraint form with the glide sloep constraint; where $\beta$ is the defined slope.
+
+#### Problem 4 - Discretization of Problem 3 into Piecewise Linear Function.
+
+For $\Delta t \gt 0$, and for each instance $t_k = k \Delta t,\forall k = 0,...,N$, we replace the continuous time with
+
+$$\begin{eqarray} u(t) = u_k + (u_{k+1} - u_k) t \\ \sigma (t) = \sigma_k + (\sigma_{k+1} - sigma_k) t\end{eqarray}$$
+
+where
+$$\begin{eqarray} t=\frac{t-t_k}{\Delta t}, \forall t \in [t_k,t_{k+1}], k=0,...,N-1\end{eqarray}$$

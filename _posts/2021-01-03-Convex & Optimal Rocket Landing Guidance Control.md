@@ -133,7 +133,61 @@ $x=[r, \dot r]^T$ - Constructed state of the vehicle
 
 $r_z(t) > 0$ - Vehicle cannot travel through the ground
 
-#### Problem 1 - Nonconvex Minimum Fuel Problem
+#### Problem 1 - Nonconvex Minimum Fuel Problem (thrust constraint)
 Nonconvex minimum fuel problem can be summarized with the following set of equations:
 
-$$\begin{equation}max_{t_f,T}m(t_f) = min_{t_f,T}\int_0^t_f \vert \vert T(t) \vert \vert dt \end{equation}$$
+$$\begin{equation}max_{t_f,T}m(t_f) = min_{t_f,T}\int_0^{t_f} \vert \vert T(t) \vert \vert dt \end{equation}$$
+
+Subject to:
+$$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \end{eqnarray}$$
+$$\begin{eqnarray}\rho_1 \leq \vert \vert T(t) \vert \vert \leq \rho_2\\r_z(t) \leq 0\end{eqnarray}$$
+$$\begin{equation}\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0, j=1,...,n_s\end{equation}$$
+$$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
+
+#### Problem 2 - Convexification of Problem 1
+$$\begin{equation}min_{t_f,T,\Gamma}\int_0^{t_f} \vert \vert \Gamma(t) \vert \vert dt \end{equation}$$
+
+Subject to:
+$$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \end{eqnarray}$$
+$$\begin{equation}\vert \vert T(t) \vert \vert \leq \Gamma (t)\end{equation}$$
+$$\begin{eqnarray}\rho_1 \leq \vert \vert \Gamma (t) \vert \vert \leq \rho_2\\r_z(t) \leq 0\end{eqnarray}$$
+$$\begin{equation}\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0, j=1,...,n_s\end{equation}$$
+$$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
+
+$\Gamma$ was introduced as a slack variable and replaces $\vert \vert T \vert \vert$ with an additional constraint $\vert \vert T(t) \vert \vert \leq \Gamma (t)$. According to this [paper](https://www.researchgate.net/publication/257426699_Lossless_Convexification_of_Nonconvex_Control_Bound_and_Pointing_Constraints_in_the_Soft_Landing_Optimal_Control_Problem), the optimal solution to Problem 2 is also a feasible solution of Problem 1. This is done using the Hamiltonian of Problem 2 and using necessary conditions for optimality, pointwise maximum principle, and the transversality condition.
+
+{% include image.html file="/landing/nonconvex to convex.png" description="Problem 1 to Problem 2 Convexification of the Thrust Constraint" %}
+
+### Change of Variables
+
+Before we proceed expanding Problem 2, a change of variables is needed to allow for a much cleaner numerical algorithm. We'll set
+
+$$\begin{eqnarray}\sigma = \frac{\Gamma}{m}\\
+u = \frac{T}{m}\end{eqnarray}$$
+
+and thus changing the translational dynamics of the system
+$$\begin{eqnarray}\ddot r(t) = g + u(t)\\
+\frac{\dot m(t)}{m} = -\alpha \sigma (t)\\
+\therefore m(t)=m_0exp[-\alpha \int_0^{t_f} \sigma (t)dt] \end{eqnarray}$$
+
+Therefore, we must minimize the integral term in the last mass dynamical equations. The original constraints follow that
+$$\begin{eqnarray}\vert \vert u(t) \vert \vert \leq \sigma (t), \forall t \in [0,t_f]\\
+\frac{\rho_1}{m(t)} \leq \sigma (t) \leq \frac{\rho_2}{m(t)}, \forall t \in [0,t_f]\end{eqnarray}$$
+
+This inequality now describes a convex set. However, when we consider $m$ by itself to be variable of the problem, these inequalities become bilinear and do not define a convex region. We'll now introduce $z$ to resolve this issue and convexify these inequalities. Let's define $z = log m$, and then the mass depletion rate now becomes $\dot z(t) = -\alpha \sigma (t)$. The inequalities now become
+$$\begin{equation}\rho_1 exp(-z(t)) \leq \sigma (t) \leq \rho_2 exp(-z(t)), \forall t \in [0,t_f]\label{inequality}\end{equation}$$
+
+The left side of the inequality in \eqref{inequality} defines a convex feasible region, but the right part doesn't. We'll use Taylor expansion of the exponential to achieve second-order cone and linear approximation to be used in our problem. The first part of \eqref{inequality} can be approximate by the first three terms of the series, or second-order cone:
+
+$$\begin{equation}\rho_1 exp(-z_0)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \end{equation}$$
+
+Where $z_0$ is a given constant. The right side of \eqref{inequality} can be linear or the first two terms of the Taylor expansion. Therefore
+
+$$\begin{eqnarray}\sigma \leq \rho_2 exp(-z_0)[1-(z-z_0)]\\
+with \mu_1 = \rho_1 exp(-z_0), and \mu_2 = \rho_2 exp(-z_0)\end{eqnarray}$$
+
+We now have a second order cone formulation where $z_0(t) = log(m_{wet}-\alpha \rho_2 t)$ where $z_0(t)$ serves as a lower bound on $z(t)$ at each time. We must now ensure that $z(t)$ is constrained properly with
+
+$$\begin{eqnarray}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha \rho_1 t)\end{eqnarray}$$
+
+#### Problem 3 - Simplification with Glide Slope Constraint

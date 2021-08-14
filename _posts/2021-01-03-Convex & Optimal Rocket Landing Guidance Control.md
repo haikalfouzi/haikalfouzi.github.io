@@ -152,11 +152,11 @@ $$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=
 $$\begin{equation}min_{t_f,T,\Gamma}\int_0^{t_f} \vert \vert \Gamma(t) \vert \vert dt \end{equation}$$
 
 Subject to:
-$$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \end{eqnarray}$$
-$$\begin{equation}\vert \vert T(t) \vert \vert \leq \Gamma (t)\end{equation}$$
-$$\begin{eqnarray}\rho_1 \leq \vert \vert \Gamma (t) \vert \vert \leq \rho_2\\r_z(t) \leq 0\end{eqnarray}$$
-$$\begin{equation}\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0, j=1,...,n_s\end{equation}$$
-$$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
+$$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \\
+\vert \vert T(t) \vert \vert \leq \Gamma (t)\\
+\rho_1 \leq \vert \vert \Gamma (t) \vert \vert \leq \rho_2\\r_z(t) \leq 0\\
+\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0, j=1,...,n_s\\
+m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{eqnarray}$$
 
 $\Gamma$ was introduced as a slack variable and replaces $\vert \vert T \vert \vert$ with an additional constraint $\vert \vert T(t) \vert \vert \leq \Gamma (t)$. According to this [paper](https://www.researchgate.net/publication/257426699_Lossless_Convexification_of_Nonconvex_Control_Bound_and_Pointing_Constraints_in_the_Soft_Landing_Optimal_Control_Problem), the optimal solution to Problem 2 is also a feasible solution of Problem 1. This is done using the Hamiltonian of Problem 2 and using necessary conditions for optimality, pointwise maximum principle, and the transversality condition.
 

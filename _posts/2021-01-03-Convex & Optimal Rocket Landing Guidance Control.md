@@ -200,12 +200,12 @@ $$\begin{eqnarray}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha
 $$\begin{eqnarray}min_{t_f,u,\sigma} \int_0^{t_f} \sigma (t)dt\end{eqnarray}$$
 
 Subject to:
-$$\begin{eqnarray}\ddot r(t) = g + u(t)\\\dot z(t)=-\alpha \sigma (t)\end{eqnarray}$$
-$$\begin{equation}\vert \vert u(t) \vert \vert \leq \sigma (t)\end{equation}$$
-$$\begin{eqnarray}u_1(t)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \leq u_2(t)[1-(z-z_0)] \end{eqnarray}$$
-$$\begin{equation}log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha \rho_1 t)\end{equation}$$
-$$\begin{equation}\vert \vert r_x(t) \vert \vert \leq \beta r_z(t)\end{equation}$$
-$$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
+$$\begin{eqnarray}\ddot r(t) = g + u(t)\\\dot z(t)=-\alpha \sigma (t)\\
+\vert \vert u(t) \vert \vert \leq \sigma (t)\\
+u_1(t)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \leq u_2(t)[1-(z-z_0)]\\
+log(m_{wet}-\alpha \rho_2 t) \leq z(t) \leq log(m_{wet}-\alpha \rho_1 t)\\
+\vert \vert r_x(t) \vert \vert \leq \beta r_z(t)\\
+m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{eqnarray}$$
 
 We have replaced the general affine constraint form with the glide sloep constraint; where $\beta$ is the defined slope.
 
@@ -216,10 +216,10 @@ For $\Delta t \gt 0$, and for each instance $t_k = k \Delta t,\forall k = 0,...,
 $$\begin{eqnarray}u(t) = u_k + (u_{k+1}-u_k)t\\\sigma (t) = \sigma_k + (\sigma_{k+1} - \sigma_k)t\end{eqnarray}$$
 
 where
-$$\begin{equation}t=\frac{t-t_k}{\Delta t},\forall t \in [t_k,t_{k+1}),k=0,...,N-1\end{equation}$$
+$$\begin{equation}t=\frac{t-t_k}{\Delta t},\forall t \in [t_k,t_{k+1}),k=0,...,N-1 \end{equation}$$
 
 Thus:
-$$\begin{equation}min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n\end{equation}$$
+$$\begin{equation}min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n \end{equation}$$
 
 Subject to: for $k=0,...,N$
 $$\begin{eqnarray}r_{k+1}=r_k + \frac{\Delta t}{2}(\dot r_k + \dot r_{k+1})+\frac{\Delta t^2}{12}(u_{k+1}-u_k)\\

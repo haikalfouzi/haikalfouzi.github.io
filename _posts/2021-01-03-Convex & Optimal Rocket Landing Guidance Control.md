@@ -132,3 +132,8 @@ $x(t_f)=0$
 $x=[r, \dot r]^T$ - Constructed state of the vehicle
 
 $r_z(t) > 0$ - Vehicle cannot travel through the ground
+
+#### Problem 1 - Nonconvex Minimum Fuel Problem
+Nonconvex minimum fuel problem can be summarized with the following set of equations:
+
+$$\begin{equation}max_{t_f,T}m(t_f) = min_{t_f,T}\int_0^t_f \vert \vert T(t) \vert \vert dt \end{equation}$$

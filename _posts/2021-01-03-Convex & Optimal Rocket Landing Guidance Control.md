@@ -140,8 +140,11 @@ $$\begin{equation}max_{t_f,T}m(t_f) = min_{t_f,T}\int_0^{t_f} \vert \vert T(t) \
 
 Subject to:
 $$\begin{eqnarray}\ddot r(t) = g + \frac{T_c(t)}{m(t)}\\\dot m(t) = -\alpha \vert \vert T_c(t) \vert \vert \end{eqnarray}$$
+
 $$\begin{eqnarray}\rho_1 \leq \vert \vert T(t) \vert \vert \leq \rho_2\\r_z(t) \leq 0\end{eqnarray}$$
+
 $$\begin{equation}\vert \vert S_j x(t) - v_j \vert \vert + c^T_j x(t) + a_j \leq 0, j=1,...,n_s\end{equation}$$
+
 $$\begin{equation}m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{equation}$$
 
 #### Problem 2 - Convexification of Problem 1
@@ -175,13 +178,13 @@ $$\begin{eqnarray}\vert \vert u(t) \vert \vert \leq \sigma (t), \forall t \in [0
 \frac{\rho_1}{m(t)} \leq \sigma (t) \leq \frac{\rho_2}{m(t)}, \forall t \in [0,t_f]\end{eqnarray}$$
 
 This inequality now describes a convex set. However, when we consider $m$ by itself to be variable of the problem, these inequalities become bilinear and do not define a convex region. We'll now introduce $z$ to resolve this issue and convexify these inequalities. Let's define $z = log m$, and then the mass depletion rate now becomes $\dot z(t) = -\alpha \sigma (t)$. The inequalities now become
-$$\begin{equation}\rho_1 exp(-z(t)) \leq \sigma (t) \leq \rho_2 exp(-z(t)), \forall t \in [0,t_f]\label{inequality}\end{equation}$$
+$$\begin{equation}\rho_1 exp(-z(t)) \leq \sigma (t) \leq \rho_2 exp(-z(t)), \forall t \in [0,t_f]\label{inequality_1}\end{equation}$$
 
-The left side of the inequality in \eqref{inequality} defines a convex feasible region, but the right part doesn't. We'll use Taylor expansion of the exponential to achieve second-order cone and linear approximation to be used in our problem. The first part of \eqref{inequality} can be approximate by the first three terms of the series, or second-order cone:
+The left side of the inequality in \eqref{inequality_1} defines a convex feasible region, but the right part doesn't. We'll use Taylor expansion of the exponential to achieve second-order cone and linear approximation to be used in our problem. The first part of \eqref{inequality_1} can be approximate by the first three terms of the series, or second-order cone:
 
 $$\begin{equation}\rho_1 exp(-z_0)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \end{equation}$$
 
-Where $z_0$ is a given constant. The right side of \eqref{inequality} can be linear or the first two terms of the Taylor expansion. Therefore
+Where $z_0$ is a given constant. The right side of \eqref{inequality_1} can be linear or the first two terms of the Taylor expansion. Therefore
 
 $$\begin{eqnarray}\sigma \leq \rho_2 exp(-z_0)[1-(z-z_0)]\\
 with \mu_1 = \rho_1 exp(-z_0), and \mu_2 = \rho_2 exp(-z_0)\end{eqnarray}$$

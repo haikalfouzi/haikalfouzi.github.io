@@ -213,7 +213,22 @@ We have replaced the general affine constraint form with the glide sloep constra
 
 For $\Delta t \gt 0$, and for each instance $t_k = k \Delta t,\forall k = 0,...,N$, we replace the continuous time with
 
-$$\begin{eqarray} u(t) = u_k + (u_{k+1} - u_k) t \\ \sigma (t) = \sigma_k + (\sigma_{k+1} - sigma_k) t\end{eqarray}$$
+$$\begin{eqnarray}u(t) = u_k + (u_{k+1}-u_k)t\\\sigma (t) = \sigma_k + (\sigma_{k+1} - \sigma_k)t\end{eqnarray}$$
 
 where
-$$\begin{eqarray} t=\frac{t-t_k}{\Delta t}, \forall t \in [t_k,t_{k+1}], k=0,...,N-1\end{eqarray}$$
+$$\begin{equation}t=\frac{t-t_k}{\Delta t},\forall t \in [t_k,t_{k+1}),k=0,...,N-1\end{equation}$$
+
+Thus:
+$$\begin{equation}min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n\end{equation}$$
+
+Subject to: for $k=0,...,N$
+$$\begin{eqnarray}r_{k+1}=r_k + \frac{\Delta t}{2}(\dot r_k + \dot r_{k+1})+\frac{\Delta t^2}{12}(u_{k+1}-u_k)\\
+\dot r_{k+1} = \dot r_k + \frac{\Delta t}{2}(u_k + u_{k+1})-g\Delta t\\
+z_{k+1}=z_k-\frac{\alpha \Delta t}{2}(\sigma_k + \sigma_{k+1})\\
+\vert \vert u_k \vert \vert \leq \sigma_k\\
+u_{1,k}(t)[1-(z_k-z_{0,k})+\frac{(z_k-z_{0,k})^2}{2}] \leq \sigma \leq u_{2,k}(t)[1-(z_k-z_{0,k})]\\
+log(m_{wet}-\alpha \rho_2 k \Delta t) \leq z_k \leq log(m_{wet}-\alpha \rho_1 k \Delta t)\\
+\vert \vert r_x(t) \vert \vert \leq \beta r_z(t)\\
+m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0,z_0=log(m_{wet}),N\Delta t=t_f\end{eqnarray}$$
+
+We now have general lossless-convexified algorithm and can use vehicle parameters to generate trajectories.

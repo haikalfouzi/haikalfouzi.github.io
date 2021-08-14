@@ -106,7 +106,7 @@ $$\begin{equation}\vert \vert Sx \vert \vert + c^T_j x \leq 0\end{equation}$$
 
 where
 
-$$\begin{equation}S=\begin{bmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\end{bmatrix}, c =\begin{bmatrix}-\tan\Theta_{alt} & 0 & 0 & 0\end{bmatrix}^T\end{equation}$$
+$$\begin{eqnarray}S=\begin{bmatrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\end{bmatrix}\\ c =\begin{bmatrix}-\tan\Theta_{alt} & 0 & 0 & 0\end{bmatrix}^T\end{eqnarray}$$
 
 ### Thrust Control Constraints
 Control constraints (upper bound and lower bound) on thrust can be expressed as below:

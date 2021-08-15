@@ -219,7 +219,7 @@ where
 $$\begin{equation}t=\frac{t-t_k}{\Delta t},\forall t \in [t_k,t_{k+1}),k=0,...,N-1 \end{equation}$$
 
 Thus:
-$$\begin{equation}\min_{u_0,...,u_N,\sigma_0,...,\sigma_N}-z_n \end{equation}$$
+$$\begin{equation}\min_{u_0,...,u_N,\sigma_0,...,\sigma_N} -z_n\end{equation}$$
 
 Subject to: for $k=0,...,N$
 $$\begin{eqnarray}r_{k+1}=r_k + \frac{\Delta t}{2}(\dot r_k + \dot r_{k+1})+\frac{\Delta t^2}{12}(u_{k+1}-u_k)\\
@@ -232,3 +232,72 @@ log(m_{wet}-\alpha \rho_2 k \Delta t) \leq z_k \leq log(m_{wet}-\alpha \rho_1 k 
 m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0,z_0=log(m_{wet}),N\Delta t=t_f\end{eqnarray}$$
 
 We now have general lossless-convexified algorithm and can use vehicle parameters to generate trajectories.
+
+### MATLAB Simulation
+```
+% constants and vehicle parameters
+g0 = 9.807;					% Earth gravity, m/s^2
+g_plan = [0; 0;-3.721];		% Other planet gravity (mars), m/s^2
+tv_max = 25;				% maximum TVC angle
+Isp = 255;					% specific impulse, s
+m_d = 1500;             	% drymass, kg
+m_f = 500;              	% fuel mass, kg
+m_t = m_f + m_d;			% total mass, kg
+Ft =  22000;        		% thrust
+rho2 = Ft;              	% thrust (upper bound), Newtons
+rho1 = 0.15 * Ft;       	% lowest throttleability (lower bound), Newtons
+% initial and final conditions -- dynamics  [x y z]
+r_0 = [-2000; 1500; 2000];	% position vector, m
+v_0 = [50; 70; -75];		% velocity vector, m/s
+r_N =[0; 0; 0];				% terminal position, m
+v_N =[0; 0; 0];				% terminal velocity, m
+% other timing and constraints
+t_f = 100;					% final time horizon (not optimal)
+dt = 1;             		% period of calculation
+N = 1+(t_f/dt);				% calculation steps
+a = 1/(Isp*g0);				% alpha used for fuel mass consumption
+gs = 4;						% glides slope angle constraint
+```
+
+Above are the vehicle initial parameters and conditions set up through MATLAB. The specific impulse $I_{sp}$ was chosen to reflect an [ethanol liquid oxygen (LOX) rocket engine performance](http://www.astronautix.com/l/loxalcohol.html). For this simulation, we'll use open source solver [CVX](http://cvxr.com/cvx/doc/intro.html#what-is-cvx) [SeDuMi](https://github.com/sqlp/sedumi) to solve our SOCP problem. Discretized problem 4 equation and constraints are formulated in MATLAB as per below
+
+```
+% the discretized problem 4
+% maximize the terminal mass
+cvx_solver SEDUMI
+cvx_begin
+	variables u(3,N) z(1,N) s(1,N) r(3,N) v(3,N)
+	minimize(-z(N))			% objective function
+	subject to 				% constraints and dynamics
+		r(:,1) == r_0;		% position IC
+		v(:,1) == v_0;		% velocity IC
+		r(:,N) == r_N; 		% position TC
+		v(:,N) == v_N;		% velocity TC
+		z(1) == log(m_t);	% mass IC
+
+		r(3,:) >= 0;							% plz don't crash into the ground
+		u(3,:) >= s.*cos(degtorad(tv_max));		% thrust vector control constraint
+		r(1,:) <= r(3,:)/tan(degtorad(gs));		% glide slope
+        z(:) >= 0;
+
+		for  k = 1:N-1
+			r(:,k+1) == r(:,k) + ((dt/2)*(v(:,k) + v(:,k+1))) +(((dt^2)/12)*(u(:,k+1) - u(:,k)));
+			v(:,k+1) == v(:,k) + ((dt/2)*(u(:,k) + u(:,k+1))) +(g_plan*dt);
+			z(1,k+1) == z(1,k) - (((a*dt)/2)*(s(1,k) + s(1,k+1)));
+		end
+
+		for k=1:N
+			norm(u(:,k)) <= s(1,k);
+			z_0 = m_t - (a*rho2*dt*(k-1)); % total mass - fuel mass burned eq.20
+			m_1 = rho1/z_0; % eq.10
+			m_2 = rho2/z_0; % eq.10
+			z1 = log(m_t-(a*rho1*dt*(k-1))); % eq.20
+			z0 = log(z_0); % eq.20
+			z(1,k) >= z0; % eq.20 - upper bound rho2
+			z(1,k) <= z1; % eq.20 - lower bound rho1
+			s(1,k) <= m_2*(1 - (z(1,k) - z0));
+			s(1,k) >= m_1*(1 - (z(1,k) - z0) + (((z(1,k) - z0)^2)/2));
+        end
+
+cvx_end
+```

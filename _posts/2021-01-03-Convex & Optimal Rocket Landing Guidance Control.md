@@ -189,7 +189,7 @@ $$\begin{equation}\rho_1 exp(-z_0)[1-(z-z_0)+\frac{(z-z_0)^2}{2}] \leq \sigma \e
 Where $z_0$ is a given constant. The right side of eqn.\ref{inequality_1} can be linear or the first two terms of the Taylor expansion. Therefore
 
 $$\begin{eqnarray}\sigma \leq \rho_2 exp(-z_0)[1-(z-z_0)]\\
-\mu_1 = \rho_1 exp(-z_0), \mu_2 = \rho_2 exp(-z_0)\end{eqnarray}$$
+\mu_1 = \rho_1 exp(-z_0)=\frac{\rho_1}{exp(z_0)}, \mu_2 = \rho_2 exp(-z_0)=\frac{\rho_2}{exp(z_0)}\end{eqnarray}$$
 
 We now have a second order cone formulation where $z_0(t) = log(m_{wet}-\alpha \rho_2 t)$ where $z_0(t)$ serves as a lower bound on $z(t)$ at each time. We must now ensure that $z(t)$ is constrained properly with
 
@@ -239,3 +239,13 @@ We now have general lossless-convexified algorithm and can use vehicle parameter
 Above are the vehicle initial parameters and conditions set up through MATLAB. The specific impulse $I_{sp}$ was chosen to reflect an [ethanol liquid oxygen (LOX) rocket engine performance](http://www.astronautix.com/l/loxalcohol.html). For this simulation, we'll use open source solver [CVX](http://cvxr.com/cvx/doc/intro.html#what-is-cvx) [SeDuMi](https://github.com/sqlp/sedumi) to solve our SOCP problem. Discretized problem 4 equation and constraints are formulated in MATLAB as per below
 
 {% gist da8194a80bc9451fba23771d0a91a09b %}
+
+The trajectory in figure below shows how the vehicle overshot the target during the entry phase and how it works its way back towards the landing site. Keep in mind that the $t_f$ in this situation is static at 100 seconds and is not necessarily globally optimal.
+
+{% include image.html file="/landing/trajectory.png" %}
+{% include image.html file="/landing/trajectorygif.gif" %}
+{% include image.html file="/landing/vehicle_descent.gif" %}
+{% include image.html file="/landing/trajectory with glide slope constraint.png" description="Trajectory with Glide Slope Constraint" %}
+{% include image.html file="/landing/thrust.png" %}
+{% include image.html file="/landing/position.png" %}
+{% include image.html file="/landing/mass.png" %}

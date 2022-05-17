@@ -6,4 +6,5 @@ title: Links
 
 [linkedin](https://linkedin.com/in/haikalfouzi)
 [github](https://github.com/haikalfouzi)
+[malaysia rocket society](mrs.com.my)
 [email](mailto:haikalfouzi13@gmail.com)

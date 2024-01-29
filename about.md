@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 {% include image.html file="/KWpsgsk3_400x400.jpg"%}
-My current focus lies with [Dyson](dyson.com), where I leverage my expertise as a Senior Simulation Engineer, utilizing Computational Fluid Dynamics (CFD) and numerical method to optimize product performance and unlock its secrets.
+My current focus lies with [Dyson](https://www.dyson.my), where I leverage my expertise as a Senior Simulation Engineer, utilizing Computational Fluid Dynamics (CFD) and numerical method to optimize product performance and unlock its secrets.
 
 Previously, I was at [Sapura Energy](https://sapuraenergy.com), where I am responsible for the fabrication project for the 5 years tenure EPCC (Engineering, Procurement, Construction, and Commissioning) of Bokor-Betty Brownfield and Rejuvenation Project started during the end quarter of 2018. Petronas Carigali was undertaking the development of Bokor-Betty field which is located in Miri, Sarawak. Bokor Field was discovered in 1971 and started its production in 1982 putting the current service life of the existing facilities at an average of 33 years. Betty field was discovered in 1968 and started its production in 1978 putting the current service life of the existing facilities at an average 37 years. Therefore, Petronas intends to redevelop and rejuvenation of these facilities/assets to enable them to be fit for use for another 25 years.
 

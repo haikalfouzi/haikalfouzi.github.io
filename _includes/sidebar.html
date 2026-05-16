@@ -25,6 +25,10 @@
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
-    <p>&copy; {{ "now" | date: '%Y' }}. All rights reserved.</p>
+    <p>&copy; <span id="copy-year">{{ "now" | date: '%Y' }}</span>. All rights reserved.</p>
+    <script>
+      document.getElementById('copy-year').textContent = new Date().getFullYear();
+    </script>
+
   </div>
 </div>

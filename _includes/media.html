@@ -13,6 +13,7 @@
     {% assign mime = include.type %}
   {% else %}
     {% case ext %}
+    <!--- https://www.iana.org/assignments/media-types/media-types.xhtml !--->
       {% when 'png' %}{% assign mime = 'image/png' %}
       {% when 'jpg' or 'jpeg' %}{% assign mime = 'image/jpeg' %}
       {% when 'gif' %}{% assign mime = 'image/gif' %}
@@ -36,6 +37,9 @@
         <object data="{{ url }}" type="{{ mime }}" width="{{ include.width | default: '100%' }}" height="{{ include.height | default: '100%' }}">
           <p>Error: This browser cannot display the file ({{ mime }}). <a href="{{ url }}">Download file.</a></p>
         </object>
+      {% if mime == "application/pdf" %}
+      <p>PDF file: <a href="{{ url }}">Download PDF ({{ mime }})</a></p>
+      {% endif %}
       {% if include.description %}
         <figcaption class="caption">{{ include.description }}</figcaption>
       {% endif %}

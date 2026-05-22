@@ -3,8 +3,8 @@ layout: post
 title: Convex & Optimal Rocket Landing Guidance Control
 ---
 
-{% include image.html file="/landing/failed landing.gif" description="From this" %}
-{% include image.html file="/landing/falcon b1052 & b1053 landing.gif" description="To this" %}
+{% include media.html file="/landing/failed landing.gif" description="From this" %}
+{% include media.html file="/landing/falcon b1052 & b1053 landing.gif" description="To this" %}
 
 # Overview
 
@@ -82,7 +82,7 @@ $$\begin{eqnarray}T_c = (nT\cos \phi)e\\\alpha = (I_{sp}g\cos \phi)^{-1}\end{eqn
 
 But for simplicity, we'll assume vehicle with one engine and cantilever angle $\phi$ of 0 degrees.
 
-{% include image.html file="/landing/glideslope constraint.png" description="Glide Slope Constraint" %}
+{% include media.html file="/landing/glideslope constraint.png" description="Glide Slope Constraint" %}
 
 The main state constraints are the glide slope constraint on the position vector and an upper bound constraint on the velocity vector magnitude.
 1. The glide slope constraint is described in figure above and is imposed to ensure that the lander stays at a safe distance from the ground until it reaches its target.
@@ -119,7 +119,7 @@ $$\begin{equation}\rho_2 \gt \rho_1 \gt 0\end{equation}$$
 
 The final time is denote as $t_f$.
 
-{% include image.html file="/landing/control constraints.png" description="Three Control Constraints - (b) & (c) constraints are ignored since we only utilized one engine per vehicle" %}
+{% include media.html file="/landing/control constraints.png" description="Three Control Constraints - (b) & (c) constraints are ignored since we only utilized one engine per vehicle" %}
 
 Initial conditions are provided as below:
 
@@ -160,7 +160,7 @@ m(0)=m_{wet},r(0)=r_0,\dot r(0)=\dot {r_0},r(t_f)=\dot r(t_f)=0\end{eqnarray}$$
 
 $\Gamma$ was introduced as a slack variable and replaces $\vert \vert T \vert \vert$ with an additional constraint $\vert \vert T(t) \vert \vert \leq \Gamma (t)$. According to this [paper](https://www.researchgate.net/publication/257426699_Lossless_Convexification_of_Nonconvex_Control_Bound_and_Pointing_Constraints_in_the_Soft_Landing_Optimal_Control_Problem), the optimal solution to Problem 2 is also a feasible solution of Problem 1. This is done using the Hamiltonian of Problem 2 and using necessary conditions for optimality, pointwise maximum principle, and the transversality condition.
 
-{% include image.html file="/landing/nonconvex to convex.png" description="Problem 1 to Problem 2 Convexification of the Thrust Constraint" %}
+{% include media.html file="/landing/nonconvex to convex.png" description="Problem 1 to Problem 2 Convexification of the Thrust Constraint" %}
 
 ### Change of Variables
 
@@ -243,10 +243,10 @@ Above are the vehicle initial parameters and conditions set up through MATLAB. T
 
 The trajectory in figure below shows how the vehicle overshot the target during the entry phase and how it works its way back towards the landing site. Keep in mind that the $t_f$ in this situation is static at 100 seconds and is not necessarily globally optimal.
 
-{% include image.html file="/landing/trajectory.png" %}
-{% include image.html file="/landing/trajectorygif.gif" %}
-{% include image.html file="/landing/vehicle_descent.gif" %}
-{% include image.html file="/landing/trajectory with glide slope constraint.png" description="Trajectory with Glide Slope Constraint" %}
-{% include image.html file="/landing/thrust.png" %}
-{% include image.html file="/landing/position.png" %}
-{% include image.html file="/landing/mass.png" %}
+{% include media.html file="/landing/trajectory.png" %}
+{% include media.html file="/landing/trajectorygif.gif" %}
+{% include media.html file="/landing/vehicle_descent.gif" %}
+{% include media.html file="/landing/trajectory with glide slope constraint.png" description="Trajectory with Glide Slope Constraint" %}
+{% include media.html file="/landing/thrust.png" %}
+{% include media.html file="/landing/position.png" %}
+{% include media.html file="/landing/mass.png" %}

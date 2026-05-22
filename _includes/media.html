@@ -1,0 +1,44 @@
+{% assign src = include.file | default: include.data | default: '' %}
+{% if src == '' %}
+  <p>Error: Missing media file</p>
+{% else %}
+  {% assign first_char = src | slice: 0, 1 %}
+  {% if first_char == '/' %}
+    {% assign src = src | remove_first: '/' %}
+  {% endif %}
+  {% assign url = '/media/' | append: src | relative_url %}
+
+  {% assign ext = src | split:'.' | last | downcase %}
+  {% if include.type %}
+    {% assign mime = include.type %}
+  {% else %}
+    {% case ext %}
+      {% when 'png' %}{% assign mime = 'image/png' %}
+      {% when 'jpg' or 'jpeg' %}{% assign mime = 'image/jpeg' %}
+      {% when 'gif' %}{% assign mime = 'image/gif' %}
+      {% when 'svg' %}{% assign mime = 'image/svg+xml' %}
+      {% when 'webp' %}{% assign mime = 'image/webp' %}
+      {% when 'pdf' %}{% assign mime = 'application/pdf' %}
+      {% when 'mp4' %}{% assign mime = 'video/mp4' %}
+      {% when 'webm' %}{% assign mime = 'video/webm' %}
+      {% when 'ogv' %}{% assign mime = 'video/ogg' %}
+      {% when 'mp3' %}{% assign mime = 'audio/mpeg' %}
+      {% when 'wav' %}{% assign mime = 'audio/wav' %}
+      {% when 'stl' %}{% assign mime = 'model/stl' %}
+      {% when 'oga' or 'ogg' %}{% assign mime = 'audio/ogg' %}
+      {% else %}
+      {% assign mime = 'application/octet-stream' %}
+    {% endcase %}
+  {% endif %}
+
+  <p>
+    <figure style="margin:0; text-align:center">
+        <object data="{{ url }}" type="{{ mime }}" width="{{ include.width | default: '100%' }}" height="{{ include.height | default: '100%' }}">
+          <p>Error: This browser cannot display the file ({{ mime }}). <a href="{{ url }}">Download file.</a></p>
+        </object>
+      {% if include.description %}
+        <figcaption class="caption">{{ include.description }}</figcaption>
+      {% endif %}
+    </figure>
+  </p>
+{% endif %}

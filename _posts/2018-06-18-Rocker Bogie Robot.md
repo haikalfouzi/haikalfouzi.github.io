@@ -95,3 +95,5 @@ For the project funding was provided by the Drexel Mechanical Engineering and Me
 {% include youtube.html id="GKP_l6HY60w" %}
 
 {% include youtube.html id="QWzuthb7Wuc" %}
+
+{% include media.html file="/rocker-bogie-robot/competitors.jpg" description="Competitor's Robots" %}

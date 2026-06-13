@@ -11,3 +11,4 @@ title: Links
 [public](https://public.haikalfouzi.com)
 [transmission](https://transmission.haikalfouzi.com)
 [photos](https://photos.haikalfouzi.com)
+[ups](https://ups.haikalfouzi.com)
